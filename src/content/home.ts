@@ -69,10 +69,6 @@ export const home = {
         alt: "Navid Rashid at an industry lounge event",
       },
       {
-        src: "/images/portraits/gallery-1valet-event.jpg",
-        alt: "Navid Rashid at a 1Valet and Property Time industry event",
-      },
-      {
         src: "/images/portraits/gallery-priced-to-sell-podcast.jpg",
         alt: "Navid Rashid hosting the Priced to Sell podcast in studio",
       },
