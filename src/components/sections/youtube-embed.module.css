@@ -1,0 +1,152 @@
+.embed {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.35rem;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  background: #0a0907;
+}
+
+.embed::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 1rem;
+  border: 1px solid rgba(236, 231, 222, 0.22);
+  pointer-events: none;
+  transition: inset 500ms var(--ease-out);
+}
+
+.embed::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  pointer-events: none;
+}
+
+.embed:hover::before {
+  inset: 0.55rem;
+}
+
+.player {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.facade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.poster {
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.05) brightness(0.78);
+  transform: scale(1.03);
+  transition:
+    transform 1s var(--ease-out),
+    filter 0.45s var(--ease);
+}
+
+.facade:hover .poster,
+.facade:focus-visible .poster {
+  transform: scale(1.07);
+  filter: saturate(1) contrast(1.06) brightness(0.86);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(11, 10, 8, 0.72)),
+    radial-gradient(420px 240px at 50% 50%, rgba(224, 122, 48, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.play {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  border-radius: 50%;
+  background: rgba(11, 10, 8, 0.72);
+  color: var(--gold-bright);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.play svg {
+  margin-left: 0.15rem;
+}
+
+.facade:hover .play,
+.facade:focus-visible .play {
+  transform: scale(1.06);
+  border-color: var(--gold);
+  background: rgba(20, 18, 14, 0.85);
+}
+
+.facade:focus-visible {
+  outline: none;
+}
+
+.facade:focus-visible .play {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--gold);
+}
+
+.caption {
+  position: absolute;
+  z-index: 1;
+  left: 1.15rem;
+  bottom: 1.15rem;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster,
+  .play,
+  .embed::before {
+    transition: none;
+  }
+
+  .poster,
+  .facade:hover .poster,
+  .facade:focus-visible .poster,
+  .facade:hover .play,
+  .facade:focus-visible .play {
+    transform: none;
+  }
+}

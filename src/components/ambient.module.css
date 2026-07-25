@@ -1,0 +1,91 @@
+.root {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.4;
+  animation: floatOrb 16s var(--ease) infinite;
+  will-change: transform;
+}
+
+.orbA {
+  width: min(46vw, 32rem);
+  height: min(46vw, 32rem);
+  top: -14%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(224, 122, 48, 0.32), transparent 68%);
+}
+
+.orbB {
+  width: min(40vw, 26rem);
+  height: min(40vw, 26rem);
+  bottom: 8%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(120, 96, 60, 0.22), transparent 70%);
+  animation-duration: 20s;
+  animation-direction: reverse;
+}
+
+.orbC {
+  width: min(34vw, 20rem);
+  height: min(34vw, 20rem);
+  top: 44%;
+  left: 42%;
+  background: radial-gradient(circle, rgba(236, 231, 222, 0.05), transparent 70%);
+  animation-duration: 24s;
+}
+
+.cursorGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26rem;
+  height: 26rem;
+  margin: -13rem 0 0 -13rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 122, 48, 0.12), transparent 65%);
+  opacity: 0.75;
+  transition: opacity 0.4s ease;
+  will-change: transform;
+}
+
+.grain {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(2) infinite;
+  mix-blend-mode: overlay;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 42%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+@media (max-width: 720px) {
+  .cursorGlow {
+    display: none;
+  }
+
+  .orb {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .grain {
+    animation: none;
+  }
+}

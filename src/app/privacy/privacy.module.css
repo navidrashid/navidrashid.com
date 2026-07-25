@@ -1,0 +1,28 @@
+.page {
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  max-width: 12ch;
+}
+
+.updated {
+  margin-top: 0.75rem;
+  color: var(--mute);
+  font-size: 0.9375rem;
+}
+
+.prose {
+  max-width: 42rem;
+}
+
+.prose > p {
+  margin-top: 1.15rem;
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
+}
+
+.prose h2 {
+  margin-top: 2.25rem;
+  font-size: 1.65rem;
+}

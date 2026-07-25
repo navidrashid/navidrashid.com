@@ -1,0 +1,75 @@
+.frame {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.contact {
+  position: fixed;
+  top: max(1.1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+  pointer-events: auto;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 1px 10px rgba(11, 10, 8, 0.75);
+  transition: color 0.25s var(--ease);
+}
+
+.contact i {
+  color: var(--gold);
+  font-style: normal;
+  font-size: 0.55rem;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.contact:hover {
+  color: var(--gold-bright);
+}
+
+.contact:hover i {
+  transform: rotate(180deg) scale(1.2);
+}
+
+.coords {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0.5rem;
+  margin: 0;
+  color: color-mix(in srgb, var(--mute) 70%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 900px) {
+  .coords {
+    display: none;
+  }
+
+  .contact {
+    top: max(0.85rem, env(safe-area-inset-top));
+    right: max(0.65rem, env(safe-area-inset-right));
+  }
+}
+
+:global(body.lightbox-open) .contact {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}

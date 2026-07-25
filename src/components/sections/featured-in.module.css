@@ -1,0 +1,120 @@
+.section {
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+  padding-inline: 1.5rem;
+}
+
+.label {
+  color: var(--mute);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rule {
+  height: 1px;
+  flex: 1;
+  max-width: 8rem;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform-origin: center;
+  animation: drawLine 1.2s var(--ease-out) both;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+}
+
+.item {
+  flex: none;
+}
+
+.logo {
+  width: auto;
+  height: 2rem;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  filter: grayscale(1) brightness(1.1);
+  opacity: 0.62;
+  transform: scale(var(--logo-scale, 1));
+  transition:
+    opacity 0.3s var(--ease),
+    filter 0.3s var(--ease);
+}
+
+.logoClean {
+  mix-blend-mode: normal;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.link {
+  display: grid;
+  place-items: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0.45rem 0.35rem;
+  text-decoration: none;
+}
+
+.link:hover .logo,
+.item:hover .logo {
+  opacity: 1;
+  filter: grayscale(0) brightness(1.15);
+}
+
+.link:hover .logoClean,
+.item:hover .logoClean {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+.note {
+  margin: 1.5rem auto 0;
+  max-width: 36rem;
+  padding-inline: 1.5rem;
+  color: var(--mute);
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 600px) {
+  .logo {
+    height: 2.4rem;
+  }
+
+  .list {
+    gap: 2rem 3.25rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .logo {
+    height: 2.9rem;
+  }
+
+  .list {
+    gap: 2.25rem 4rem;
+  }
+}
