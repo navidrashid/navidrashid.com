@@ -272,17 +272,18 @@ export const home = {
       {
         label: "Startups",
         items: [
-          {
-            company: "Vessbook",
-            role: "Co-Founder & CTO",
-            type: "",
-            location: "Dubai, UAE",
-            period: "2026 — Present",
-            badge: "building",
-            logo: "/images/logos/vessbook.png",
-            summary:
-              "Building a platform that rethinks how tankers get chartered in the oil market — closing the gap between owners and charterers with technology built for how the trade actually moves.",
-          },
+          // Temporarily hidden — restore when Vessbook is public again.
+          // {
+          //   company: "Vessbook",
+          //   role: "Co-Founder & CTO",
+          //   type: "",
+          //   location: "Dubai, UAE",
+          //   period: "2026 — Present",
+          //   badge: "building",
+          //   logo: "/images/logos/vessbook.png",
+          //   summary:
+          //     "Building a platform that rethinks how tankers get chartered in the oil market — closing the gap between owners and charterers with technology built for how the trade actually moves.",
+          // },
           {
             company: "Keybox.ae",
             role: "Founder & CEO",
