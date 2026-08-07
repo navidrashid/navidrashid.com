@@ -112,10 +112,11 @@
 }
 
 @media (max-width: 719px) {
-  /* Vertical source — give it a portrait frame instead of a letterbox crop. */
+  /* Matches the source ratio, so the full frame shows — a 4/5 window cut the
+     bottom sixth off and took the hands and watch with it. */
   .media {
     min-height: 0;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 2 / 3;
   }
 
   .body {
