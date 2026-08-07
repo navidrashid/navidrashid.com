@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { home } from "@/content/home";
 import { site } from "@/content/site";
+import { ChapterMark } from "@/components/ui/chapter-mark";
 import { Reveal } from "@/components/ui/reveal";
 import styles from "./contact.module.css";
 
@@ -65,8 +67,21 @@ export function Contact() {
 
   return (
     <section id={contact.id} className={`section ${styles.section}`}>
+      <div className={styles.backdrop} aria-hidden>
+        <Image
+          src={contact.backdrop.src}
+          alt=""
+          fill
+          className={styles.backdropImage}
+          sizes="100vw"
+        />
+        <span className={styles.backdropScrim} />
+      </div>
+
       <div className={styles.glow} aria-hidden />
       <div className={styles.gridlines} aria-hidden />
+
+      <ChapterMark index={6} label="Connect" />
 
       <div className={`container ${styles.inner}`}>
         <Reveal className={styles.header}>
@@ -75,7 +90,6 @@ export function Contact() {
               <i aria-hidden />
               Online now
             </span>
-            <span className={styles.chapter}>06 / CONNECT</span>
           </div>
 
           <h2 className={styles.title}>

@@ -3,7 +3,7 @@
   border-block: 1px solid var(--line);
   overflow: hidden;
   background:
-    radial-gradient(760px 380px at 8% -6%, rgba(224, 122, 48, 0.12), transparent 55%),
+    radial-gradient(760px 380px at 8% -6%, rgba(224, 122, 48, 0.07), transparent 55%),
     linear-gradient(180deg, rgba(20, 18, 14, 0.5), transparent 38%);
 }
 
@@ -59,20 +59,10 @@
   background: rgba(236, 231, 222, 0.02);
 }
 
-.media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(15, 13, 11, 0.08), rgba(15, 13, 11, 0.55)),
-    linear-gradient(90deg, rgba(224, 122, 48, 0.08), transparent 60%);
-}
-
+/* Shown untreated — no grade, no scrim. */
 .image {
   object-fit: cover;
-  object-position: 50% 20%;
-  filter: grayscale(1) contrast(1.08) brightness(0.9);
+  object-position: 50% 12%;
 }
 
 .body {
@@ -122,8 +112,10 @@
 }
 
 @media (max-width: 719px) {
+  /* Vertical source — give it a portrait frame instead of a letterbox crop. */
   .media {
-    min-height: clamp(16rem, 58vw, 22rem);
+    min-height: 0;
+    aspect-ratio: 4 / 5;
   }
 
   .body {

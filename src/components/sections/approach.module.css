@@ -4,21 +4,9 @@
   overflow: hidden;
   border-block: 1px solid var(--line);
   background:
-    radial-gradient(820px 420px at 92% 8%, rgba(224, 122, 48, 0.1), transparent 58%),
-    radial-gradient(640px 360px at 6% 100%, rgba(224, 122, 48, 0.06), transparent 55%),
+    radial-gradient(820px 420px at 92% 8%, rgba(224, 122, 48, 0.06), transparent 58%),
+    radial-gradient(640px 360px at 6% 100%, rgba(224, 122, 48, 0.04), transparent 55%),
     linear-gradient(180deg, rgba(20, 18, 14, 0.45), transparent 42%);
-}
-
-.chapter {
-  position: absolute;
-  top: 2rem;
-  right: 2.5vw;
-  z-index: 1;
-  color: var(--gold);
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
 }
 
 .inner {
@@ -62,6 +50,19 @@
 
 .copy {
   max-width: 44rem;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+  background: rgba(236, 231, 222, 0.02);
+}
+
+.image {
+  object-fit: cover;
+  object-position: 50% 74%;
 }
 
 .prose {
@@ -181,21 +182,30 @@
 
 @media (min-width: 980px) {
   .inner {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 27rem);
     column-gap: clamp(2.5rem, 5vw, 4.5rem);
     row-gap: clamp(2rem, 4vw, 3rem);
-    align-items: end;
+    align-items: start;
   }
 
   .intro {
     grid-column: 1;
+    grid-row: 1;
   }
 
   .copy {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 2;
     max-width: none;
-    padding-bottom: 0.35rem;
+  }
+
+  /* Spans both copy rows and stretches, so neither column leaves a gap. */
+  .media {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    aspect-ratio: auto;
+    min-height: 28rem;
   }
 
   .skills {

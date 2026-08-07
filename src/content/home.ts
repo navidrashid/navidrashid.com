@@ -9,8 +9,9 @@ export const home = {
       src: "/images/portraits/navid-hero2.png",
       alt: "Portrait of Navid Rashid",
     },
+    /** Feathered out above the neckline, so only the body swaps on scroll. */
     imageHover: {
-      src: "/images/portraits/navid-hero.png",
+      src: "/images/portraits/navid-hero-suit-body.png",
       alt: "Navid Rashid in a suit",
     },
   },
@@ -20,8 +21,8 @@ export const home = {
     title: "Outcomes over listings.",
     lead: "The industry changes. The results don't.",
     image: {
-      src: "/images/portraits/portrait-camera.jpg",
-      alt: "Navid Rashid with camera, creating content",
+      src: "/images/portraits/portrait-smile.jpg",
+      alt: "Portrait of Navid Rashid",
     },
     paragraphs: [
       "I've ranked #1 in sales in every corporate role I've held. That track record carried into real estate, where I've spent the past **nine years** building a career marked by the same edge. In 2021 and 2022 I broke into the top 2% of agents nationwide in Toronto's market. In 2023 I moved into Dubai's off-plan and pre-construction market, advising clients through complex transactions from approachable entry points to landmark luxury. Career deal volume sits north of $250M USD, with closings from $400K to $30M USD.",
@@ -71,6 +72,10 @@ export const home = {
       {
         src: "/images/portraits/gallery-priced-to-sell-podcast.jpg",
         alt: "Navid Rashid hosting the Priced to Sell podcast in studio",
+      },
+      {
+        src: "/images/portraits/portrait-camera.jpg",
+        alt: "Navid Rashid with camera, creating content",
       },
       {
         src: "/images/portraits/gallery-ferrow-stadium-event.jpg",
@@ -315,6 +320,10 @@ export const home = {
     eyebrow: "The Marketing Arsenal",
     title: "Creative craft. Systems that convert.",
     lead: "The skills behind every launch, listing, and client conversation — built in-house, not outsourced.",
+    image: {
+      src: "/images/portraits/portrait-library.jpg",
+      alt: "Navid Rashid seated in front of a library wall",
+    },
     paragraphs: [
       "Graphic design, photography, videography, editing, web, and software aren't side hobbies. They're how I run the business: brand, content, CRM, paid acquisition, and funnels that work before the first call.",
       "YouTube became the scale layer — sharing knowledge, earning trust, and reaching clients long before we spoke. Every piece of content had to do two jobs: help someone, and prove the expertise.",
@@ -346,6 +355,7 @@ export const home = {
           "Launch strategy",
           "Pipeline development",
           "Broker engagement",
+          "Public speaking",
           "Team leadership",
           "AI operations",
         ],
@@ -411,6 +421,10 @@ export const home = {
     eyebrow: "Stay connected",
     title: "Let’s connect.",
     lead: "The best conversations start with a message.",
+    backdrop: {
+      src: "/images/portraits/salon-wide.jpg",
+      alt: "",
+    },
   },
 } as const;
 

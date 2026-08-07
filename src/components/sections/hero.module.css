@@ -207,15 +207,18 @@
     object-position: center bottom;
   }
 
+  /* T-shirt is the base and never fades. The suit layer sits on top and is
+     already transparent above the neckline, so scrolling changes the body
+     while the head stays the t-shirt's. */
   .imagePrimary {
-    z-index: 2;
-    opacity: var(--swap, 0);
+    z-index: 1;
+    opacity: 1;
   }
 
   .imageAlt {
-    z-index: 1;
+    z-index: 2;
     display: block;
-    opacity: calc(1 - var(--swap, 0));
+    opacity: var(--swap, 0);
     clip-path: none;
     -webkit-mask-image: none;
     mask-image: none;

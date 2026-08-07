@@ -41,4 +41,10 @@ export const press = [
     height: 65,
     scale: 1.15,
   },
+  {
+    name: "Marriott Bonvoy",
+    src: "/images/press/logo-marriottBonvoy.png",
+    width: 200,
+    height: 58,
+  },
 ] as const;

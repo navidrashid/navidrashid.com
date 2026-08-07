@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# secrets — never commit
+recovery-codes.txt
+
 # local / unused assets (keep out of the repo)
 public/images/IMG_1680.JPG
 public/images/tempImageForSave.jpg

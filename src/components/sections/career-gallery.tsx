@@ -8,6 +8,7 @@ import styles from "./career-gallery.module.css";
 
 export function CareerGallery() {
   const { gallery } = home;
+  const photos = gallery.images;
   const [active, setActive] = useState<number | null>(null);
   const [canScrollMore, setCanScrollMore] = useState(true);
   const stripRef = useRef<HTMLUListElement | null>(null);
@@ -19,16 +20,16 @@ export function CareerGallery() {
   const showPrev = useCallback(() => {
     setActive((current) => {
       if (current === null) return current;
-      return (current - 1 + gallery.images.length) % gallery.images.length;
+      return (current - 1 + photos.length) % photos.length;
     });
-  }, [gallery.images.length]);
+  }, [photos.length]);
 
   const showNext = useCallback(() => {
     setActive((current) => {
       if (current === null) return current;
-      return (current + 1) % gallery.images.length;
+      return (current + 1) % photos.length;
     });
-  }, [gallery.images.length]);
+  }, [photos.length]);
 
   const updateScrollHint = useCallback(() => {
     const node = stripRef.current;
@@ -95,7 +96,7 @@ export function CareerGallery() {
     const endX = event.changedTouches[0]?.clientX;
     touchStartX.current = null;
 
-    if (startX === null || endX === undefined || gallery.images.length < 2) {
+    if (startX === null || endX === undefined || photos.length < 2) {
       return;
     }
 
@@ -106,7 +107,7 @@ export function CareerGallery() {
     else showNext();
   };
 
-  const activeImage = active === null ? null : gallery.images[active];
+  const activeImage = active === null ? null : photos[active];
 
   const lightbox =
     activeImage && typeof document !== "undefined"
@@ -131,7 +132,7 @@ export function CareerGallery() {
               Close
             </button>
 
-            {gallery.images.length > 1 ? (
+            {photos.length > 1 ? (
               <>
                 <button
                   type="button"
@@ -196,13 +197,13 @@ export function CareerGallery() {
         className={`${styles.track} ${canScrollMore ? styles.hasMore : ""}`}
       >
         <ul ref={stripRef} className={styles.strip}>
-          {gallery.images.map((image, index) => (
+          {photos.map((image, index) => (
             <li key={image.src} className={styles.item}>
               <button
                 type="button"
                 className={styles.thumb}
                 onClick={() => setActive(index)}
-                aria-label={`View photo ${index + 1} of ${gallery.images.length}`}
+                aria-label={`View photo ${index + 1} of ${photos.length}`}
               >
                 <Image
                   src={image.src}

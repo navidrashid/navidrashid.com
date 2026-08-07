@@ -44,7 +44,7 @@ export function FeaturedIn() {
           );
         })}
       </ul>
-      <p className={styles.note}>As seen across Canadian business media</p>
+      <p className={styles.note}>As seen across business media</p>
     </section>
   );
 }

@@ -79,7 +79,12 @@
   }
 
   .orb {
-    opacity: 0.25;
+    opacity: 0.22;
+  }
+
+  /* Full-viewport blended noise repaints constantly — not worth the battery on phones. */
+  .grain {
+    display: none;
   }
 }
 

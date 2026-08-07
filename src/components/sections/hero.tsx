@@ -28,7 +28,7 @@ export function Hero() {
           media.style.setProperty("--py", "0px");
 
           if (reduced) {
-            media.style.setProperty("--swap", "1");
+            media.style.setProperty("--swap", "0");
             return;
           }
 

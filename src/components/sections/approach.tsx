@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { home } from "@/content/home";
+import { ChapterMark } from "@/components/ui/chapter-mark";
 import { Reveal } from "@/components/ui/reveal";
 import styles from "./approach.module.css";
 
@@ -7,9 +9,7 @@ export function Approach() {
 
   return (
     <section id={approach.id} className={`section ${styles.section}`}>
-      <span className={styles.chapter} aria-hidden>
-        03 / SKILLS
-      </span>
+      <ChapterMark index={3} label="Skills" />
 
       <div className={`container ${styles.inner}`}>
         <Reveal className={styles.intro}>
@@ -24,6 +24,16 @@ export function Approach() {
               <p key={paragraph.slice(0, 28)}>{paragraph}</p>
             ))}
           </div>
+        </Reveal>
+
+        <Reveal className={styles.media} variant="right" delay={120}>
+          <Image
+            src={approach.image.src}
+            alt={approach.image.alt}
+            fill
+            className={styles.image}
+            sizes="(max-width: 979px) 100vw, 27rem"
+          />
         </Reveal>
 
         <div className={styles.skills}>

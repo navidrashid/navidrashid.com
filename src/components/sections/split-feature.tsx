@@ -1,4 +1,5 @@
 import { home } from "@/content/home";
+import { ChapterMark } from "@/components/ui/chapter-mark";
 import { Reveal } from "@/components/ui/reveal";
 import { FeatureCarousel } from "./feature-carousel";
 import { YoutubeEmbed } from "./youtube-embed";
@@ -37,14 +38,15 @@ function hasNote(
 }
 
 export function SplitFeature({ data, reverse = false }: Props) {
-  const chapter = data.id === "venture" ? "04" : "05";
-  const backdrop = data.id === "venture" ? "Builder" : "Media";
+  const isVenture = data.id === "venture";
+  const backdrop = isVenture ? "Builder" : "Media";
 
   return (
     <section id={data.id} className={`section ${styles.section}`}>
       <span className={styles.backdrop} aria-hidden>
         {backdrop}
       </span>
+      <ChapterMark index={isVenture ? 4 : 5} label={isVenture ? "Venture" : "Media"} />
       <div
         className={`container ${styles.grid} ${reverse ? styles.reverse : ""}`}
       >
@@ -67,7 +69,6 @@ export function SplitFeature({ data, reverse = false }: Props) {
           variant={reverse ? "left" : "right"}
           delay={100}
         >
-          <span className={styles.chapter}>{chapter}</span>
           <p className="eyebrow">{data.eyebrow}</p>
           <h2 className="section-title">{data.title}</h2>
           <div className={styles.prose}>

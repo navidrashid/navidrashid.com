@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { home } from "@/content/home";
+import { ChapterMark } from "@/components/ui/chapter-mark";
 import { Reveal } from "@/components/ui/reveal";
 import styles from "./statement.module.css";
 
@@ -18,6 +19,7 @@ export function Statement() {
 
   return (
     <section id={statement.id} className={`section ${styles.section}`}>
+      <ChapterMark index={1} label="Introduction" />
       <div className={`container ${styles.inner}`}>
         <div className={styles.aside}>
           <Reveal className={styles.header}>

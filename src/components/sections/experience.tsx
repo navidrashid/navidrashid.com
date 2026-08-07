@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { home } from "@/content/home";
+import { ChapterMark } from "@/components/ui/chapter-mark";
 import { Reveal } from "@/components/ui/reveal";
 import styles from "./experience.module.css";
 
@@ -33,9 +34,7 @@ export function Experience() {
 
   return (
     <section id={experience.id} className={`section ${styles.section}`}>
-      <span className={styles.chapter} aria-hidden>
-        02 / EXPERIENCE
-      </span>
+      <ChapterMark index={2} label="Experience" />
       <div className="container">
         <Reveal className={styles.intro}>
           <p className="eyebrow">{experience.eyebrow}</p>
