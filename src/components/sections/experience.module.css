@@ -94,6 +94,58 @@
   border-bottom: 0;
 }
 
+/* Contracts held during the tenure above them. Indented behind a rail and
+   stripped of the divider that would otherwise read as a job change. */
+.nested {
+  padding-left: calc(clamp(1.35rem, 3vw, 1.85rem) + clamp(1.25rem, 3vw, 2.25rem));
+  background: rgba(236, 231, 222, 0.022);
+}
+
+.nested::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.35rem, 3vw, 1.85rem);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--gold) 40%, transparent);
+}
+
+.item:has(+ .nested),
+.nested:has(+ .nested) {
+  border-bottom-color: transparent;
+}
+
+/* The rail should stop at the last contract, not run into the next employer. */
+.nested:not(:has(+ .nested))::after {
+  bottom: 50%;
+}
+
+.nested .logo {
+  width: clamp(3.25rem, 6.5vw, 4.25rem);
+  height: clamp(3.25rem, 6.5vw, 4.25rem);
+}
+
+.nested .role {
+  font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+}
+
+.tenureTag {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0.55rem;
+  padding: 0.24rem 0.68rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, var(--line));
+  border-radius: 999px;
+  background: rgba(224, 122, 48, 0.1);
+  color: var(--gold-bright);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .logo {
   position: relative;
   width: clamp(4.25rem, 9vw, 5.5rem);
@@ -248,6 +300,12 @@
   .item {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  /* Full-width single column leaves no room to indent; the rail and tag carry
+     the relationship on their own. */
+  .nested {
+    padding-left: calc(clamp(1.35rem, 3vw, 1.85rem) + 0.85rem);
   }
 
   .topRow {

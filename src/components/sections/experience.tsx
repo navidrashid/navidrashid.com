@@ -13,6 +13,8 @@ type ExperienceItem = {
   badge: string;
   logo: string;
   summary: string;
+  /** Set on engagements held during the tenure listed directly above them. */
+  under?: string;
 };
 
 type ExperienceGroup = {
@@ -58,7 +60,7 @@ export function Experience() {
                   <Reveal
                     key={`${item.company}-${item.role}`}
                     as="li"
-                    className={styles.item}
+                    className={`${styles.item}${item.under ? ` ${styles.nested}` : ""}`}
                     delay={80 + index * 70}
                   >
                     <div className={styles.logo} aria-hidden={!item.logo}>
@@ -79,6 +81,13 @@ export function Experience() {
                     </div>
 
                     <div className={styles.main}>
+                      {item.under ? (
+                        <p className={styles.tenureTag}>
+                          {item.type ? `${item.type} · ` : ""}
+                          {item.under}
+                        </p>
+                      ) : null}
+
                       <div className={styles.topRow}>
                         <h3 className={styles.role}>{item.role}</h3>
                         <span className={styles.period}>
@@ -99,7 +108,7 @@ export function Experience() {
 
                       <p className={styles.meta}>
                         <span className={styles.company}>{item.company}</span>
-                        {item.type ? (
+                        {item.type && !item.under ? (
                           <span className={styles.metaDot}>{item.type}</span>
                         ) : null}
                         <span className={styles.metaDot}>{item.location}</span>
