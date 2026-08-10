@@ -18,19 +18,20 @@ export const home = {
   statement: {
     id: "statement",
     eyebrow: "Introduction",
-    title: "Outcomes over listings.",
-    lead: "The industry changes. The results don't.",
+    title: "Excuses don't close deals.",
+    lead: "Preparation does. Every single time.",
     image: {
       src: "/images/portraits/portrait-smile.jpg",
       alt: "Portrait of Navid Rashid",
     },
     paragraphs: [
-      "I've ranked #1 in sales in every corporate role I've held. That track record carried into real estate, where I've spent the past **nine years** building a career marked by the same edge. In 2021 and 2022 I broke into the top 2% of agents nationwide in Toronto's market. In 2023 I moved into Dubai's off-plan and pre-construction market, advising clients through complex transactions from approachable entry points to landmark luxury. Career deal volume sits north of $250M USD, with closings from $400K to $30M USD.",
-      "Developers have brought me in to lead major project launches. I directed sales on the first JW Marriott-branded private residences on Dubai Islands, and played a key role in the sales success of two landmark Toronto developments, Hills on Bayview by Armour Heights and 8188 Yonge by Constantine. Building and leading sales teams has been part of that work, not just closing deals myself.",
-      "What separates my work isn't only the close. It's the engine behind it. Brand strategy, creative direction, content, CRM, and paid acquisition aren't side skills, they're how I earn trust before a client ever picks up the phone. I write, shoot, and produce my own content, and speak publicly on the market and the craft of selling it, which means clients arrive already knowing how I think, not just what I'm selling.",
-      "Outside real estate, I've built and exited as an entrepreneur, founding VVS Vapes in Toronto at 21 years old.",
-      "Here's what I believe: Success is never handed to you. Every worthwhile journey comes with obstacles, but the right mindset transforms challenges into stepping stones. My approach is simple: think big, move fast, and never stop hunting for the next opportunity.",
-      "If you're a client, partner, or principal looking to build something and deliver on it, let's talk.",
+      "Trust is the only currency in this business. **Nine years** in, I've earned it the same way every time: show up prepared, tell the truth, close it clean.",
+      "In 2021 and 2022 I ranked in the **top 2% of agents in Canada**. In 2023 I moved into Dubai's real estate market, advising clients through complex transactions that run from approachable entry points to landmark luxury. I work both sides of the market: off-plan and secondary. Career deal volume now sits north of $250M USD, with my largest single deal closing at $30M.",
+      "Developers have brought me in to launch their buildings. I directed sales on the first JW Marriott-branded private residences on Dubai Islands, and drove the sales success of two landmark Toronto developments: Hills on Bayview by Armour Heights and 8188 Yonge by Constantine. Each one meant building and leading the sales team, not just closing my own deals.",
+      "The close is the last five percent. Everything before it is the engine — brand strategy, creative direction, content, CRM, paid acquisition. I write, shoot, and produce my own content and speak publicly on the market and the craft of selling it, so clients arrive already knowing how I think, not just what I'm selling.",
+      "Outside real estate, I've built and exited a company of my own: VVS Vapes, founded in Toronto at 21.",
+      "Success is never handed over. Obstacles are the price of anything worth having, and the right mindset turns them into leverage. Think big, move fast, never stop hunting.",
+      "If you're a client, partner, or principal with something worth building, let's talk.",
     ],
   },
   gallery: {
@@ -157,7 +158,7 @@ export const home = {
     },
     paragraphs: [
       "Since 16, I've ranked #1 in sales in every corporate role I've held. Real estate is where that drive met a real purpose: financial literacy, wealth-building, and opening doors for people ready to move.",
-      "From 2018, I built my name in Toronto's market and earned recognition among the top 2% of agents nationwide. Starting with nothing taught me the only edge that lasts — keep moving.",
+      "From 2018, I built my name in Toronto's market and earned recognition among the top 2% of agents in Canada. Starting with nothing taught me the only edge that lasts — keep moving.",
       "When Dubai's market opened, I stepped in. Today I create investment pathways for clients who think globally, and lead sales on projects that define a skyline.",
       "Success isn't handed over. The right mindset turns friction into forward motion. Think big. Move fast. Stay hunting.",
     ],
@@ -170,12 +171,12 @@ export const home = {
     stats: [
       { value: "$250M+", label: "Career deal volume" },
       { value: "$400K–$30M", label: "Deal range" },
-      { value: "Top 2%", label: "Nationwide · 2021 & 2022" },
+      { value: "Top 2%", label: "In Canada · 2021 & 2022" },
     ],
     awards: [
-      "Top 5% Nationwide · 2020",
-      "Top 2% Nationwide · 2021",
-      "Top 2% Nationwide · 2022",
+      "Top 5% in Canada · 2020",
+      "Top 2% in Canada · 2021",
+      "Top 2% in Canada · 2022",
     ],
     paragraphs: [
       "First-time buyers, seasoned investors, and builders — closed deals that run from approachable entries to landmark luxury. Off-plan, pre-construction, and assignment sales are where the real opportunity lives.",
