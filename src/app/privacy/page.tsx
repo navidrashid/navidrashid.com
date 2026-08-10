@@ -4,11 +4,20 @@ import styles from "./privacy.module.css";
 
 const privacyEmail = "navidrashid.dxb@gmail.com";
 
+/**
+ * Kept out of search results on purpose. Crawling stays allowed in robots.txt —
+ * a blocked URL can still be indexed from external links, and Google can only
+ * honour `noindex` on a page it is permitted to fetch.
+ */
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy policy for ${site.name}.`,
   alternates: { canonical: "/privacy" },
-  robots: { index: true, follow: true },
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: { index: false, follow: true },
+  },
 };
 
 export default function PrivacyPage() {
