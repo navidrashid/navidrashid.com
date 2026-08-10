@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { home } from "@/content/home";
+import { MapleSeal } from "@/components/ui/maple-seal";
 import styles from "./hero.module.css";
 
 export function Hero() {
@@ -106,6 +107,7 @@ export function Hero() {
 
         <div className={`container ${styles.content}`}>
           <div className={styles.stack}>
+            <MapleSeal />
             <h1 className={styles.name} aria-label={hero.name}>
               <span className={styles.lineMask}>
                 <span className={styles.lineFirst}>{firstName}</span>
