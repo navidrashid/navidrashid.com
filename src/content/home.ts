@@ -337,6 +337,7 @@ export const home = {
         skills: [
           "Brand strategy",
           "Creative direction",
+          "Copywriting",
           "Photography",
           "Videography",
           "Editing",
@@ -346,6 +347,7 @@ export const home = {
         label: "Growth",
         skills: [
           "Content systems",
+          "Audience building",
           "Paid acquisition",
           "CRM automation",
           "Funnel design",
