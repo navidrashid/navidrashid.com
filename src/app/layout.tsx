@@ -5,6 +5,7 @@ import {
   IBM_Plex_Sans,
   IBM_Plex_Mono,
 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Ambient } from "@/components/ambient";
 import { CornerFrame } from "@/components/corner-frame";
 import { SiteFooter } from "@/components/site-footer";
@@ -86,6 +87,7 @@ export default function RootLayout({
           {children}
           <SiteFooter />
         </div>
+        <Analytics />
       </body>
     </html>
   );
