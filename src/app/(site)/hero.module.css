@@ -1,0 +1,439 @@
+/* Hero v2: the name sits behind the portrait, and the Dubai skyline blends
+   from blue to orange as you scroll. --p (0 to 1) is set from hero.tsx. The
+   previous design is kept in hero.classic.* for an easy swap back. */
+
+.hero {
+  --p: 0;
+  /* How far the colours have moved from blue (0%) to orange (100%). */
+  --mix: calc(var(--p) * 100%);
+  --sky-top: color-mix(in oklab, #070606 var(--mix), #060708);
+  --sky-mid: color-mix(in oklab, #100b08 var(--mix), #0a0f16);
+  --sky-low: color-mix(in oklab, #24160d var(--mix), #16212f);
+  --glow: color-mix(in oklab, rgba(240, 150, 70, 0.6) var(--mix), rgba(140, 175, 215, 0.55));
+  --far-fill: color-mix(in oklab, #33200f var(--mix), #1a2532);
+  --near-fill: color-mix(in oklab, #080605 var(--mix), #06080b);
+  --light-fill: color-mix(in oklab, #ffc98a var(--mix), #cfe0f5);
+  position: relative;
+  height: 190svh;
+  isolation: isolate;
+  background: #070707;
+}
+
+/* Older browsers without color-mix keep the blue skyline. */
+@supports not (color: color-mix(in oklab, red, blue)) {
+  .hero {
+    --sky-top: #060708;
+    --sky-mid: #0a0f16;
+    --sky-low: #16212f;
+    --glow: rgba(140, 175, 215, 0.55);
+    --far-fill: #1a2532;
+    --near-fill: #06080b;
+    --light-fill: #cfe0f5;
+  }
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 36rem;
+  overflow: hidden;
+}
+
+/* Backdrop: one skyline; only the colours move. */
+.city {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(95% 75% at 50% 100%, var(--glow), transparent 72%),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-low) 100%);
+}
+
+.far,
+.near {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  height: 64%;
+}
+
+.far {
+  opacity: 0.7;
+  transform: translateY(calc(var(--p) * 2%));
+}
+
+.near {
+  transform: translateY(calc(var(--p) * 6%));
+}
+
+/* Pinned to the right so the portrait never hides it. */
+.burj {
+  position: absolute;
+  bottom: 0;
+  right: clamp(1.5rem, 8vw, 9rem);
+  width: auto;
+  height: 66%;
+  transform: translateY(calc(var(--p) * 6%));
+}
+
+.far :global(.far) {
+  fill: var(--far-fill);
+}
+
+.near :global(.near),
+.burj :global(.burj) {
+  fill: var(--near-fill);
+}
+
+.sky :global(.light) {
+  fill: var(--light-fill);
+  opacity: 0.5;
+}
+
+/* Name: two words, one either side of the portrait, tucked behind it. */
+.name {
+  position: absolute;
+  z-index: 2;
+  top: 27%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0;
+  padding-inline: clamp(1rem, 3.5vw, 3.5rem);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(4rem, 13vw, 15rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  pointer-events: none;
+}
+
+.word {
+  display: block;
+  padding-bottom: 0.08em;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.rise {
+  display: inline-block;
+  transform: translateY(108%);
+  animation: rise 1.1s var(--ease-out) forwards;
+}
+
+.first {
+  color: #f5f5f7;
+  transform: translateX(calc(var(--p) * -9vw));
+  opacity: calc(1 - var(--p) * 0.95);
+}
+
+.first .rise {
+  animation-delay: 0.2s;
+}
+
+.last {
+  color: #a1a1a6;
+  transform: translateX(calc(var(--p) * 9vw));
+  opacity: calc(1 - var(--p) * 0.95);
+}
+
+.last .rise {
+  animation-delay: 0.34s;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Portrait */
+.media {
+  --mx: 50%;
+  --my: 40%;
+  --reveal: 0;
+  --swap: 0;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 0;
+  top: 22%;
+  width: min(52vw, 38rem);
+  pointer-events: auto;
+  cursor: crosshair;
+  will-change: transform;
+  opacity: 0;
+  transform: translateX(-50%) scale(calc(1.32 - var(--p) * 0.1));
+  transform-origin: center bottom;
+  animation: mediaFade 1.1s var(--ease-out) 0.12s forwards;
+}
+
+@keyframes mediaFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image {
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.imagePrimary {
+  z-index: 1;
+}
+
+.imageAlt {
+  z-index: 2;
+  opacity: var(--reveal);
+  transition: opacity 0.25s ease;
+  /* Block the head: only torso and clothes can reveal. */
+  clip-path: inset(30% 0 0 0);
+  -webkit-mask-image: radial-gradient(
+    circle 20rem at var(--mx) var(--my),
+    #000 0%,
+    #000 42%,
+    transparent 74%
+  );
+  mask-image: radial-gradient(
+    circle 20rem at var(--mx) var(--my),
+    #000 0%,
+    #000 42%,
+    transparent 74%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Footer row: flag and rotating line, scroll cue */
+.foot {
+  position: absolute;
+  z-index: 6;
+  inset: auto 0 0;
+  padding-block: clamp(1.25rem, 4vh, 2.5rem);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+  pointer-events: none;
+}
+
+.footRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  color: #f5f5f7;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  pointer-events: auto;
+}
+
+/* The shared seal is a block-level coin; shrink it to sit inline. */
+.flag > span {
+  width: 2.75rem;
+  margin: 0;
+}
+
+/* Lines stack in one grid cell so the box is as wide as the longest. */
+.rotor {
+  display: grid;
+}
+
+.rotor > span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(0.6em);
+  transition:
+    opacity 0.6s var(--ease-out),
+    transform 0.6s var(--ease-out);
+}
+
+.rotor > .on {
+  opacity: 1;
+  transform: none;
+}
+
+.cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  color: rgba(245, 245, 247, 0.7);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  opacity: calc(1 - var(--p) * 6);
+}
+
+.cue i {
+  position: relative;
+  width: 1px;
+  height: 1.6rem;
+  background: rgba(245, 245, 247, 0.35);
+  overflow: hidden;
+}
+
+.cue i::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 40%;
+  background: #f5f5f7;
+  animation: cue 1.8s var(--ease) infinite;
+}
+
+@keyframes cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(250%);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: 150svh;
+  }
+
+  .name {
+    top: 9%;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: clamp(4rem, 25vw, 9.5rem);
+    line-height: 0.86;
+  }
+
+  .first,
+  .last {
+    transform: none;
+    opacity: calc(1 - var(--p) * 0.6);
+  }
+
+  .media {
+    left: -8%;
+    right: -8%;
+    top: 12%;
+    width: auto;
+    cursor: default;
+    pointer-events: none;
+    transform: scale(0.98);
+  }
+
+  /* T-shirt is the base and never fades. The suit layer sits on top and is
+     already transparent above the neckline, so scrolling changes the body
+     while the head stays the t-shirt's. */
+  .imagePrimary {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .imageAlt {
+    z-index: 2;
+    display: block;
+    opacity: var(--swap, 0);
+    clip-path: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .far,
+  .near {
+    height: 46%;
+  }
+
+  .burj {
+    right: 4vw;
+    height: 50%;
+  }
+
+  .cue {
+    display: none;
+  }
+}
+
+/* Tablets: keep the name flanking the portrait, as on desktop. */
+@media (min-width: 600px) and (max-width: 900px) {
+  .name {
+    top: 24%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 14vw;
+    line-height: 0.9;
+  }
+
+  .first {
+    transform: translateX(calc(var(--p) * -9vw));
+    opacity: calc(1 - var(--p) * 0.95);
+  }
+
+  .last {
+    transform: translateX(calc(var(--p) * 9vw));
+    opacity: calc(1 - var(--p) * 0.95);
+  }
+}
+
+/* Short phones: drop the portrait so it doesn't cover the name. */
+@media (max-width: 900px) and (max-height: 720px) {
+  .media {
+    top: 24%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    height: 100svh;
+  }
+
+  .media,
+  .rise,
+  .cue i::after {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .media {
+    transform: translateX(-50%) scale(1.3);
+  }
+
+  .rotor > span {
+    transition: none;
+  }
+
+  .imageAlt {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+  .media {
+    transform: scale(0.98);
+  }
+
+  .imageAlt {
+    opacity: 0;
+  }
+}

@@ -17,4 +17,3 @@ Edit copy and links in `src/content/` without touching layout components.
 
 Push to GitHub and import the repo in [Vercel](https://vercel.com). Root directory defaults work. Set the domain `navidrashid.com` after cutover from Wix.
 
-Update `email` in `src/content/site.ts` before launch if needed.

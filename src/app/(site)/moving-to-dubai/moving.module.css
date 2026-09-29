@@ -1,0 +1,484 @@
+.page {
+  --card: #f5f5f7;
+  --text: #1d1d1f;
+  --soft: #86868b;
+  padding: clamp(5.5rem, 9vw, 7.5rem) 0 clamp(4rem, 9vw, 7rem);
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.wide {
+  max-width: 76rem;
+}
+
+.kicker {
+  margin: 0 0 1.25rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.h1 {
+  max-width: 60rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.h1 span,
+.h2 span {
+  color: var(--soft);
+}
+
+.lead {
+  max-width: 42rem;
+  margin: 1.75rem 0 0;
+  color: var(--soft);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  background: var(--text);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.pill:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+.soft {
+  background: var(--card);
+  color: var(--text);
+}
+
+.soft:hover {
+  background: var(--text);
+  color: #ffffff;
+}
+
+.light {
+  background: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.light:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.banner {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #0a0a0b;
+}
+
+.bannerImage {
+  object-fit: cover;
+  object-position: 40% 55%;
+}
+
+/* The order of things */
+.order {
+  padding-top: clamp(4rem, 9vw, 7rem);
+}
+
+.h2 {
+  max-width: 46rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.steps {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem clamp(1.5rem, 5vw, 4rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.stepTitle {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.stepLine {
+  max-width: 34rem;
+  margin: 0;
+  color: #424245;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
+
+/* Why Dubai */
+.why {
+  padding-top: clamp(4rem, 9vw, 7rem);
+  scroll-margin-top: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+.s2 {
+  grid-column: span 2;
+}
+
+.s3 {
+  grid-column: span 3;
+}
+
+.s4 {
+  grid-column: span 4;
+}
+
+/* Two cards stacked to fill one grid slot. */
+.stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.stack .card {
+  min-height: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 16rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 2rem;
+  background: var(--card);
+}
+
+.dark {
+  background: #0a0a0b;
+  color: #f5f5f7;
+}
+
+/* A deep blue card, echoing the blue in the home hero. */
+.blue {
+  background: linear-gradient(155deg, #1f4477 0%, #10264a 100%);
+  color: #f5f5f7;
+}
+
+.blue .cardLine {
+  margin-top: 0.6rem;
+  color: rgba(245, 245, 247, 0.74);
+}
+
+/* The rate is the point of the card, so it gets the big type. */
+.rate {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.15em 0.32em;
+  margin: 0.9rem 0 0;
+  white-space: nowrap;
+  font-size: clamp(2rem, 2.9vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.rate span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18em;
+}
+
+.rate small {
+  color: #9dbbe6;
+  font-size: 0.42em;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.rate i {
+  color: #9dbbe6;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.stat {
+  margin: 0;
+  font-size: clamp(5rem, 11vw, 8.5rem);
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+}
+
+.statLabel {
+  margin: 0.5rem 0 auto;
+  color: #a1a1a6;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.dark .cardTitle {
+  margin-top: 2rem;
+}
+
+.cardLine {
+  max-width: 34rem;
+  margin: 0.9rem 0 0;
+  color: var(--soft);
+  font-size: 1.08rem;
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+}
+
+.dark .cardLine {
+  color: #a1a1a6;
+}
+
+.routes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.routeWide {
+  grid-column: 1 / -1;
+}
+
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 1.1rem;
+  background: #ffffff;
+}
+
+.tierValue {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.tierLabel {
+  color: var(--soft);
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+}
+
+.routeName {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.routeLine {
+  margin: 0.3rem 0 0;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.note {
+  margin: auto 0 0;
+  padding-top: 1.5rem;
+  color: var(--soft);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Closing call to action: a photo, shaded on the left so the text reads. */
+.final {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(22rem, 36vw, 28rem);
+  margin-top: clamp(3.5rem, 8vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 2rem;
+  background: #0a0a0b;
+  color: #f5f5f7;
+}
+
+.finalImage {
+  z-index: -2;
+  object-fit: cover;
+  object-position: 68% 50%;
+}
+
+.finalScrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(6, 6, 8, 0.78) 0%, rgba(6, 6, 8, 0.5) 40%, rgba(6, 6, 8, 0.04) 78%),
+    linear-gradient(0deg, rgba(6, 6, 8, 0.2) 0%, transparent 40%);
+}
+
+.finalCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 34rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.finalTitle {
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.finalLine {
+  max-width: 30rem;
+  margin: 1rem 0 2rem;
+  color: #a1a1a6;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+@supports (animation-timeline: view()) {
+  .rise {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .final {
+    align-items: flex-end;
+    min-height: 28rem;
+  }
+
+  .finalImage {
+    object-position: 74% 50%;
+  }
+
+  .finalScrim {
+    background: linear-gradient(0deg, rgba(6, 6, 8, 0.88) 0%, rgba(6, 6, 8, 0.62) 55%, rgba(6, 6, 8, 0.15) 100%);
+  }
+
+  .banner {
+    aspect-ratio: 4 / 3;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+  }
+
+  .s2,
+  .s3,
+  .s4 {
+    grid-column: span 6;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .routes,
+  .tiers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none !important;
+  }
+
+  .pill {
+    transition: none;
+  }
+}

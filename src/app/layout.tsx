@@ -1,43 +1,13 @@
 import type { Metadata } from "next";
-import {
-  Anton,
-  Instrument_Serif,
-  IBM_Plex_Sans,
-  IBM_Plex_Mono,
-} from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { Ambient } from "@/components/ambient";
-import { CornerFrame } from "@/components/corner-frame";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const instrument = Instrument_Serif({
-  weight: "400",
-  style: ["normal", "italic"],
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-instrument",
-  display: "swap",
-});
-
-const plex = IBM_Plex_Sans({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  variable: "--font-plex",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-plex-mono",
-  display: "swap",
-});
-
-const anton = Anton({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-anton",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -78,11 +48,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrument.variable} ${plex.variable} ${plexMono.variable} ${anton.variable}`}
+      className={inter.variable}
     >
       <body>
-        <Ambient />
-        <CornerFrame />
         <div style={{ position: "relative", zIndex: 1 }}>
           {children}
           <SiteFooter />

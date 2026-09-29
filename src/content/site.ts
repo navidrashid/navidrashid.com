@@ -5,7 +5,7 @@ export const site = {
     "Canadian real estate broker and entrepreneur. $250M+ closed across Toronto and Dubai, specializing in off-plan, secondary market, and luxury property.",
   url: "https://www.navidrashid.com",
   locale: "en_CA",
-  email: "hello@navidrashid.com",
+  whatsapp: { number: "971585887871" },
   socials: {
     instagram: "https://www.instagram.com/navrsh",
     youtube: "https://www.youtube.com/@navidrashid",

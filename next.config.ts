@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
+/**
+ * Old site URLs mapped to their new home, so links from other sites and search
+ * results keep working after the cutover. Add one line per old URL.
+ * The old Wix site was a single landing page, so there is nothing to redirect.
+ *   { source: "/old-path", destination: "/about" }
+ */
+const legacyRedirects: { source: string; destination: string }[] = [];
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return legacyRedirects.map((redirect) => ({ ...redirect, permanent: true }));
+  },
   images: {
     qualities: [75, 95],
     remotePatterns: [

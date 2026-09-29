@@ -1,16 +1,23 @@
 :root {
-  --bg: #0b0a08;
-  --bg-elevated: #14120e;
-  --bg-soft: #1a1712;
-  --ink: #ece7de;
-  --mute: #8f8a80;
-  --line: rgba(236, 231, 222, 0.14);
+  --bg: #070707;
+  --bg-elevated: #0f0f0f;
+  --bg-soft: #161616;
+  --ink: #e6e6e6;
+  --mute: #8c8c8c;
+  --line: rgba(255, 255, 255, 0.14);
 
-  /* Accent — currently orange; revert to gold: #c9a35f / #e8cf9e / 201,163,95 */
-  --gold: #e07a30;
-  --gold-bright: #f0a868;
-  --gold-glow: rgba(224, 122, 48, 0.34);
-  --gold-soft: rgba(224, 122, 48, 0.12);
+  /* Channel triplets, so every translucent variant stays on the same palette. */
+  --bg-rgb: 7, 7, 7;
+  --bg-elevated-rgb: 15, 15, 15;
+  --ink-rgb: 230, 230, 230;
+  --accent-rgb: 255, 255, 255;
+
+  /* Accent — monochrome white. Orange was e07a30 / f0a868 / 224,122,48,
+     gold before that: c9a35f / e8cf9e / 201,163,95 */
+  --gold: #ffffff;
+  --gold-bright: #ffffff;
+  --gold-glow: rgba(var(--accent-rgb), 0.2);
+  --gold-soft: rgba(var(--accent-rgb), 0.08);
 
   /* legacy aliases so every module resolves to the same accent system */
   --accent: var(--gold);
@@ -23,9 +30,9 @@
   --paper: var(--bg);
   --paper-elevated: var(--bg-elevated);
 
-  --font-display: var(--font-instrument), "Times New Roman", serif;
-  --font-body: var(--font-plex), system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), "SF Mono", monospace;
+  --font-display: var(--font-inter), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, monospace;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -78,7 +85,7 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(1100px 520px at 78% -8%, rgba(224, 122, 48, 0.05), transparent 60%),
+    radial-gradient(1100px 520px at 78% -8%, rgba(var(--accent-rgb), 0.035), transparent 60%),
     var(--bg);
   font-family: var(--font-body);
   font-size: 1.0625rem;
@@ -322,4 +329,23 @@ textarea {
   .section-lead {
     font-size: 1.02rem;
   }
+}
+
+/* Light pages of the redesign opt in with data-page: white canvas, no
+   ambient glow, matching footer. */
+html:has([data-page]),
+body:has([data-page]) {
+  background: #ffffff;
+}
+
+body:has([data-page]) [data-ambient] {
+  display: none;
+}
+
+body:has([data-page]) footer {
+  --bg: #ffffff;
+  --mute: #6e6e73;
+  --line: rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  border-top-color: rgba(0, 0, 0, 0.12);
 }

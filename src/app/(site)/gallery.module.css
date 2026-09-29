@@ -1,0 +1,220 @@
+.section {
+  --gutter: max(1.5rem, calc((100% - 76rem) / 2));
+  padding-block: clamp(4rem, 9vw, 7rem);
+  color: #1d1d1f;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 76rem;
+  margin-bottom: clamp(1.75rem, 4vw, 3rem);
+}
+
+.title {
+  max-width: 58rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.title span {
+  color: #86868b;
+}
+
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 50%;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s var(--ease),
+    opacity 0.3s var(--ease);
+}
+
+.control:hover:not(:disabled) {
+  background: #e8e8ed;
+}
+
+.control:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Full-bleed track, aligned to the page grid at both ends. */
+.track {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  flex: none;
+  height: clamp(20rem, 42vw, 32rem);
+  aspect-ratio: var(--ratio);
+  scroll-snap-align: start;
+}
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 1.75rem;
+  background: #f5f5f7;
+  color: #ffffff;
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+}
+
+.lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(24px);
+}
+
+.figure {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.frame {
+  position: relative;
+  width: min(92vw, 80rem);
+  height: 78dvh;
+}
+
+.full {
+  object-fit: contain;
+}
+
+.lbControl {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease);
+}
+
+.lbControl:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.lbClose {
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.lbPrev,
+.lbNext {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lbPrev {
+  left: 1.25rem;
+}
+
+.lbNext {
+  right: 1.25rem;
+}
+
+@media (max-width: 800px) {
+  .head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controls {
+    display: none;
+  }
+
+  .item {
+    height: 22rem;
+  }
+
+  .frame {
+    height: 70dvh;
+  }
+
+  .lbPrev,
+  .lbNext {
+    top: auto;
+    bottom: 1.25rem;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .control,
+  .lbControl {
+    transition: none;
+  }
+}

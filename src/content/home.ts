@@ -26,7 +26,7 @@ export const home = {
     },
     paragraphs: [
       "Trust is the only currency in this business. **Nine years** in, I've earned it the same way every time: show up prepared, tell the truth, close it clean.",
-      "In 2021 and 2022 I ranked in the **top 2% of agents in Canada**. In 2023 I moved into Dubai's real estate market, advising clients through complex transactions that run from approachable entry points to landmark luxury. I work both sides of the market: off-plan and secondary. Career deal volume now sits north of $250M USD, with my largest single deal closing at $30M.",
+      "In 2021 and 2022 I ranked in the **top 2% of agents in Canada**. In 2023 I moved into Dubai's real estate market, advising clients through complex transactions that run from approachable entry points to landmark luxury. I work both sides of the market: off-plan and secondary. Career deal volume now sits north of $250M USD, with my largest single deal closing at $25M USD.",
       "Developers have brought me in to launch their buildings. I directed sales on the first JW Marriott-branded private residences on Dubai Islands, and drove the sales success of two landmark Toronto developments: Hills on Bayview by Armour Heights and 8188 Yonge by Constantine. Each one meant building and leading the sales team, not just closing my own deals.",
       "The close is the last five percent. Everything before it is the engine — brand strategy, creative direction, content, CRM, paid acquisition. I write, shoot, and produce my own content and speak publicly on the market and the craft of selling it, so clients arrive already knowing how I think, not just what I'm selling.",
       "Outside real estate, I've built and exited a company of my own: VVS Vapes, founded in Toronto at 21.",
@@ -39,7 +39,7 @@ export const home = {
     eyebrow: "In the field",
     images: [
       {
-        src: "/images/portraits/gallery-jw-marriott.png",
+        src: "/images/portraits/gallery-jw-marriott.jpg",
         alt: "Navid Rashid presenting the JW Marriott Residences at Dubai Islands",
       },
       {
@@ -51,7 +51,7 @@ export const home = {
         alt: "8188 Yonge Street groundbreaking ceremony with Constantine and Trulife Developments",
       },
       {
-        src: "/images/portraits/gallery-dubai-penthouse.png",
+        src: "/images/portraits/gallery-dubai-penthouse.jpg",
         alt: "Navid Rashid in a Dubai penthouse overlooking the skyline",
       },
       {
@@ -59,7 +59,7 @@ export const home = {
         alt: "Navid Rashid at the CG Developers Global showroom beside a project model",
       },
       {
-        src: "/images/portraits/gallery-3s-presentation.png",
+        src: "/images/portraits/gallery-3s-presentation.jpg",
         alt: "Navid Rashid presenting to a sales floor at 3S Real Estate",
       },
       {
@@ -107,7 +107,7 @@ export const home = {
         alt: "Navid Rashid placing a sold topper on a Ferrow Real Estate sign",
       },
       {
-        src: "/images/portraits/gallery-sold-over-asking.png",
+        src: "/images/portraits/gallery-sold-over-asking.jpg",
         alt: "Navid Rashid sold over asking sign on a Ferrow Real Estate listing",
       },
       {
@@ -170,7 +170,7 @@ export const home = {
     lead: "Nearly a decade building independently across two of the world's most dynamic markets — Toronto and Dubai.",
     stats: [
       { value: "$250M+", label: "Career deal volume" },
-      { value: "$400K–$30M", label: "Deal range" },
+      { value: "$400K–$25M", label: "Deal range (USD)" },
       { value: "Top 2%", label: "In Canada · 2021 & 2022" },
     ],
     awards: [
@@ -227,7 +227,7 @@ export const home = {
             badge: "",
             logo: "/images/logos/ferrow.png",
             summary:
-              "Led sales operations for the agency, brokering over $100M in transactions and closing the largest deal of my career at $30M. Served as lead representative on the 8188 development, managed team performance, and drove client acquisition, negotiations, and developer relationships.",
+              "Led sales operations for the agency, brokering over $100M in transactions and closing the largest deal of my career at $25M USD. Served as lead representative on the 8188 development, managed team performance, and drove client acquisition, negotiations, and developer relationships.",
           },
           {
             company: "Armour Heights Developments",
