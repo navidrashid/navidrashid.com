@@ -7,12 +7,12 @@ import styles from "./links.module.css";
 export const metadata: Metadata = {
   title: "Links",
   description:
-    "Navid Rashid: WhatsApp, Driven Properties, Vessbook and YouTube.",
+    "Navid Rashid: WhatsApp, Driven Properties and YouTube.",
   alternates: { canonical: "/links" },
   openGraph: {
     title: "Navid Rashid: links",
     description:
-      "WhatsApp, Driven Properties, Vessbook and YouTube, all in one place.",
+      "WhatsApp, Driven Properties and YouTube, all in one place.",
     url: `${site.url}/links`,
   },
 };
@@ -27,7 +27,7 @@ export default function RevampLinksPage() {
     <main className={styles.page} data-page="links">
       <div className={styles.card}>
         <Image
-          src="/images/portraits/avatar.jpg"
+          src="/images/portraits/portrait-smile.jpg"
           alt="Navid Rashid"
           width={96}
           height={96}

@@ -129,11 +129,6 @@ export const revamp = {
         message: "Hi Navid, I found you through Instagram.",
       },
       {
-        name: "Vessbook",
-        line: "CTO & Co-Founder, oil tanker chartering",
-        href: "https://vessbook.com",
-      },
-      {
         name: "YouTube",
         line: "Market breakdowns and property tours",
         href: "https://www.youtube.com/@navidrashid",
