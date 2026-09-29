@@ -499,24 +499,6 @@
   object-position: 40% 50%;
 }
 
-/* Small glass caption that names the place. */
-.moveCaption {
-  position: absolute;
-  right: clamp(1rem, 2.5vw, 1.75rem);
-  bottom: clamp(1rem, 2.5vw, 1.75rem);
-  margin: 0;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  background: rgba(10, 10, 12, 0.42);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24);
-  color: #f5f5f7;
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
 .moveCopy {
   position: relative;
   max-width: 33rem;
@@ -938,7 +920,6 @@
   }
 
   .vessFrame {
-    order: -1;
     height: 8rem;
   }
 

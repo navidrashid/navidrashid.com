@@ -101,7 +101,7 @@ export const aboutPage = {
       ],
       facts: [
         { value: "$40M+", label: "brokered across both markets" },
-        { value: "Top 25", label: "agents under 25 in Canada" },
+        { value: "2 markets", label: "off-plan and resale" },
       ],
       photos: [
         img(

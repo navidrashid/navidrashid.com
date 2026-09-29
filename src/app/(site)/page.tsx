@@ -187,7 +187,6 @@ export default function RevampPage() {
                 <span aria-hidden>→</span>
               </Link>
             </div>
-            <p className={styles.moveCaption}>{moving.image.caption}</p>
           </div>
         </div>
       </section>

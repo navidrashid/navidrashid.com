@@ -82,7 +82,6 @@ export const revamp = {
     image: {
       src: "/images/atlantis-royal.jpg",
       alt: "Atlantis The Royal on the Palm Jumeirah at dusk",
-      caption: "Atlantis The Royal, Palm Jumeirah",
     },
   },
   gallery: {
