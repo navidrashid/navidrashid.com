@@ -32,6 +32,63 @@
   }
 }
 
+/* Light variant: a dawn sky on white, so the hero matches the rest of the
+   page. It opens warm and cools to blue as you scroll. Remove `styles.light`
+   in hero.tsx to bring the dark hero back. */
+.light {
+  --sky-top: color-mix(in oklab, #f7faff var(--mix), #fffaf4);
+  --sky-mid: color-mix(in oklab, #e9f0fa var(--mix), #fdeedd);
+  --sky-low: color-mix(in oklab, #cfe0f3 var(--mix), #f8d6b6);
+  --glow: color-mix(in oklab, rgba(125, 172, 232, 0.42) var(--mix), rgba(255, 170, 100, 0.5));
+  --far-fill: color-mix(in oklab, #c3d0df var(--mix), #ecd0b6);
+  --near-fill: color-mix(in oklab, #a5b5c8 var(--mix), #d3ab8c);
+  --light-fill: #ffffff;
+  background: #ffffff;
+}
+
+@supports not (color: color-mix(in oklab, red, blue)) {
+  .light {
+    --sky-top: #fffaf4;
+    --sky-mid: #fdeedd;
+    --sky-low: #f8d6b6;
+    --glow: rgba(255, 170, 100, 0.5);
+    --far-fill: #ecd0b6;
+    --near-fill: #d3ab8c;
+  }
+}
+
+.light .first {
+  color: #1d1d1f;
+}
+
+.light .last {
+  color: #8e8e93;
+}
+
+.light .image {
+  filter: drop-shadow(0 18px 30px rgba(20, 30, 50, 0.28));
+}
+
+.light .foot {
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.92));
+}
+
+.light .tag {
+  color: #1d1d1f;
+}
+
+.light .cue {
+  color: rgba(29, 29, 31, 0.6);
+}
+
+.light .cue i {
+  background: rgba(29, 29, 31, 0.2);
+}
+
+.light .cue i::after {
+  background: #1d1d1f;
+}
+
 .stage {
   position: sticky;
   top: 0;

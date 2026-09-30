@@ -89,7 +89,11 @@ export function Hero({ lines }: HeroProps) {
   }, []);
 
   return (
-    <section ref={heroRef} className={styles.hero} aria-label="Introduction">
+    <section
+      ref={heroRef}
+      className={`${styles.hero} ${styles.light}`}
+      aria-label="Introduction"
+    >
       <div className={styles.stage}>
         <div className={styles.city} aria-hidden>
           <div className={styles.sky}>

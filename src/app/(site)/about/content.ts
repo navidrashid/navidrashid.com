@@ -96,7 +96,7 @@ export const aboutPage = {
       title: "Then I moved into resale.",
       subtitle: "Homelife Bayview.",
       paragraphs: [
-        "At Homelife Bayview I moved into resale and brokered $40M+ across both markets. I was named one of the top 25 agents under 25 in Canada.",
+        "At Homelife Bayview I moved into resale and brokered $40M+ across both markets.",
         "It's also where I started my YouTube channel. Market breakdowns, deal strategy and property tours, all shot and edited by me. It was the first time I treated content as part of the job, and it's how clients started arriving already knowing how I think.",
       ],
       facts: [
@@ -241,10 +241,11 @@ export const aboutPage = {
       id: "craft",
       year: "The craft",
       title: "I make things, too.",
-      subtitle: "Content, brand and software.",
+      subtitle: "Software, design, content and stages.",
       paragraphs: [
         "The close is the last five percent. Everything before it is the engine: brand strategy, creative direction, content, CRM and paid acquisition.",
-        "I write, shoot, edit and publish my own content, and I build software. Clients arrive already knowing how I think.",
+        "But creating is what I love most. I design and build software and websites, this one included, and I write, shoot and edit my own content. Clients arrive already knowing how I think.",
+        "I also love the stage. I speak in public, and I make time to motivate the younger generation coming up behind me.",
       ],
       facts: [],
       photos: [
