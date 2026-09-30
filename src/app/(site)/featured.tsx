@@ -7,9 +7,7 @@ export function Featured() {
     <section className={styles.section} aria-label="Featured in">
       <div className="container">
         <div className={styles.panel}>
-          <p className={styles.label}>
-            Featured in <span>As seen across business media</span>
-          </p>
+          <p className={styles.label}>Featured in</p>
           <ul className={styles.list}>
             {press.map((item) => {
               const logo = (

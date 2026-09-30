@@ -20,12 +20,6 @@
   letter-spacing: -0.01em;
 }
 
-.label span {
-  margin-left: 0.4rem;
-  color: #86868b;
-  font-weight: 500;
-}
-
 .list {
   display: flex;
   flex-wrap: wrap;
