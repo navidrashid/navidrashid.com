@@ -11,7 +11,7 @@ export const home = {
     },
     /** Feathered out above the neckline, so only the body swaps on scroll. */
     imageHover: {
-      src: "/images/portraits/navid-hero-suit-body.png",
+      src: "/images/portraits/navid-hero-suit-body-v2.png",
       alt: "Navid Rashid in a suit",
     },
   },

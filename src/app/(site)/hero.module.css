@@ -2,6 +2,13 @@
    from blue to orange as you scroll. --p (0 to 1) is set from hero.tsx. The
    previous design is kept in hero.classic.* for an easy swap back. */
 
+/* Lets --reveal fade between 0 and 1, so the t-shirt and the suit cross-fade in step. */
+@property --reveal {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 .hero {
   --p: 0;
   /* How far the colours have moved from blue (0%) to orange (100%). */
@@ -67,6 +74,13 @@
 
 .light .image {
   filter: drop-shadow(0 18px 30px rgba(20, 30, 50, 0.28));
+}
+
+/* The suit layer is clipped and masked, and a drop-shadow on a clipped layer
+   shows up as a pale square. The t-shirt layer underneath already casts the
+   shadow, so the suit layer has none. */
+.light .imageAlt {
+  filter: none;
 }
 
 .light .foot {
@@ -227,6 +241,7 @@
   pointer-events: auto;
   cursor: crosshair;
   will-change: transform;
+  transition: --reveal 0.25s ease;
   opacity: 0;
   transform: translateX(-50%) scale(calc(1.32 - var(--p) * 0.1));
   transform-origin: center bottom;
@@ -253,23 +268,50 @@
   z-index: 1;
 }
 
+/* While the suit is showing, the t-shirt's body steps aside (its sleeves are
+   wider than the jacket's and would peek out around it). The head and neck
+   always stay. Outside the suit's circle the t-shirt is fully there. */
+@media (min-width: 901px) {
+  .imagePrimary {
+    -webkit-mask-image:
+      radial-gradient(ellipse 24% 20% at 49% 17%, #000 88%, transparent 100%),
+      radial-gradient(
+        circle calc(0.01rem + 34rem * var(--reveal)) at var(--mx) var(--my),
+        transparent 0%,
+        transparent 70%,
+        #000 100%
+      );
+    mask-image:
+      radial-gradient(ellipse 24% 20% at 49% 17%, #000 88%, transparent 100%),
+      radial-gradient(
+        circle calc(0.01rem + 34rem * var(--reveal)) at var(--mx) var(--my),
+        transparent 0%,
+        transparent 70%,
+        #000 100%
+      );
+  }
+}
+
 .imageAlt {
   z-index: 2;
   opacity: var(--reveal);
-  transition: opacity 0.25s ease;
-  /* Block the head: only torso and clothes can reveal. */
-  clip-path: inset(30% 0 0 0);
+  /* Block the head: only torso and clothes can reveal. The collar tips start
+     at about 29% of the image, so the cut has to sit above that or it slices
+     the collar flat. */
+  clip-path: inset(28% 0 0 0);
+  /* The suit file sits a touch high against the t-shirt file. */
+  transform: translate(-0.3%, 0.6%);
   -webkit-mask-image: radial-gradient(
-    circle 20rem at var(--mx) var(--my),
+    circle 34rem at var(--mx) var(--my),
     #000 0%,
-    #000 42%,
-    transparent 74%
+    #000 70%,
+    transparent 100%
   );
   mask-image: radial-gradient(
-    circle 20rem at var(--mx) var(--my),
+    circle 34rem at var(--mx) var(--my),
     #000 0%,
-    #000 42%,
-    transparent 74%
+    #000 70%,
+    transparent 100%
   );
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -404,6 +446,13 @@
   .imagePrimary {
     z-index: 1;
     opacity: 1;
+    /* Head and neck stay; the t-shirt body gives way as the suit swaps in. */
+    -webkit-mask-image:
+      radial-gradient(ellipse 24% 20% at 49% 17%, #000 88%, transparent 100%),
+      linear-gradient(rgba(0, 0, 0, calc(1 - var(--swap, 0))), rgba(0, 0, 0, calc(1 - var(--swap, 0))));
+    mask-image:
+      radial-gradient(ellipse 24% 20% at 49% 17%, #000 88%, transparent 100%),
+      linear-gradient(rgba(0, 0, 0, calc(1 - var(--swap, 0))), rgba(0, 0, 0, calc(1 - var(--swap, 0))));
   }
 
   .imageAlt {

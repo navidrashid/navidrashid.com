@@ -122,7 +122,7 @@ export const aboutPage = {
     {
       id: "vvs",
       year: "2019",
-      title: "I built a company, too.",
+      title: "I built a company too.",
       subtitle: "VVS Vapes, Toronto.",
       paragraphs: [
         "At 21 years of age, I opened VVS Vapes, a retail store and café where the floor doubled as a brand incubator. We partnered with labs to launch 30 proprietary brands, and I owned the work from identity through production.",
