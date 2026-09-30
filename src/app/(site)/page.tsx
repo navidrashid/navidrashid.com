@@ -79,10 +79,18 @@ export default function RevampPage() {
 
             {rest.map((stat) => (
               <div key={stat.value} className={`${styles.card} ${styles.stat} ${styles.rise}`}>
-                <p className={styles.statValue}>
-                  {stat.value}
-                  {"currency" in stat ? <small className={styles.cur}>{stat.currency}</small> : null}
-                </p>
+                {"list" in stat ? (
+                  <p className={`${styles.statValue} ${styles.statList}`} aria-label={stat.list.join(", ")}>
+                    {stat.list.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </p>
+                ) : (
+                  <p className={styles.statValue}>
+                    {stat.value}
+                    {"currency" in stat ? <small className={styles.cur}>{stat.currency}</small> : null}
+                  </p>
+                )}
                 <p className={styles.statLabel}>{stat.label}</p>
               </div>
             ))}

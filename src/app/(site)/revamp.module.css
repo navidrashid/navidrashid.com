@@ -231,6 +231,15 @@
   font-size: clamp(2.6rem, 4.6vw, 4.25rem);
 }
 
+/* A short list in place of a number: same bold black, one item per line. */
+.stat:not(.statLead) .statList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1.02;
+}
+
 /* The full story: a slim light banner linking to the About page. */
 .story {
   display: flex;

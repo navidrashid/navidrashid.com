@@ -33,7 +33,7 @@ export const revamp = {
         currency: "USD",
         label: "in career deal volume, across Toronto and Dubai.",
       },
-      { value: "Top 2%", label: "of agents in Canada, in 2021 and 2022." },
+      { value: "Languages", list: ["English", "Kurdish", "Farsi"], label: "spoken." },
       { value: "$25M", currency: "USD", label: "my largest single deal." },
     ],
     image: {
