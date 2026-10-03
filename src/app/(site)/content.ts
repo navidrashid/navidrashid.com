@@ -66,11 +66,24 @@ export const revamp = {
     },
     site: { label: "drivenproperties.com", href: "https://www.drivenproperties.com/" },
     paths: [
-      { name: "Buy", line: "The right place, at the right price.", message: "Hi Navid, I'm looking to buy in Dubai." },
-      { name: "Invest", line: "Yield, growth and an exit plan before you commit.", message: "Hi Navid, I'm looking to invest in Dubai property." },
-      { name: "Sell", line: "Priced right, presented well, closed clean.", message: "Hi Navid, I'd like to sell my property in Dubai." },
-      { name: "Rent", line: "Good tenants at a fair rent, with no chasing.", message: "Hi Navid, I'm looking to rent in Dubai." },
-      { name: "Manage", line: "It stays running while you get on with life.", message: "Hi Navid, I'd like help managing my Dubai property." },
+      {
+        name: "New Developments",
+        line: "Secure the right unit early, on a payment plan that works for you.",
+        message: "Hi Navid, I'm interested in a new development in Dubai.",
+        image: { src: "/images/driven/new-developments.jpg", alt: "A modern off-plan villa with a pool, wooden screens and a landscaped garden", width: 1920, height: 1080, position: "58% 50%" },
+      },
+      {
+        name: "Buy & Sell",
+        line: "Ready homes and resales. Buy with confidence, sell for what it's worth.",
+        message: "Hi Navid, I'm looking to buy or sell a ready property (resale) in Dubai.",
+        image: { src: "/images/driven/buy-sell.webp", alt: "A double-height luxury living room with floor-to-ceiling windows over the water", width: 768, height: 470, position: "45% 50%" },
+      },
+      {
+        name: "Rent & Manage",
+        line: "Great tenants, fair rent, zero chasing. Your property, handled.",
+        message: "Hi Navid, I'd like help renting or managing a property in Dubai.",
+        image: { src: "/images/driven/rent-manage.webp", alt: "A balcony overlooking the Dubai skyline and the Burj Khalifa", width: 2000, height: 1178, position: "68% 50%" },
+      },
     ],
   },
   moving: {

@@ -147,10 +147,21 @@ export default function RevampPage() {
             {driven.paths.map((path) => (
               <li key={path.name} className={styles.rise}>
                 <a href={whatsapp(path.message)} target="_blank" rel="noreferrer" className={styles.path}>
-                  <span className={styles.pathName}>{path.name}</span>
-                  <span className={styles.pathLine}>{path.line}</span>
+                  <Image
+                    src={path.image.src}
+                    alt={path.image.alt}
+                    fill
+                    sizes="(max-width: 800px) 100vw, 33vw"
+                    className={styles.pathImage}
+                    style={{ objectPosition: path.image.position }}
+                  />
+                  <span className={styles.pathShade} aria-hidden />
                   <span className={styles.pathGo} aria-hidden>
                     +
+                  </span>
+                  <span className={styles.pathText}>
+                    <span className={styles.pathName}>{path.name}</span>
+                    <span className={styles.pathLine}>{path.line}</span>
                   </span>
                 </a>
               </li>
