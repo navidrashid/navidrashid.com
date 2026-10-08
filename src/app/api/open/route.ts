@@ -13,6 +13,7 @@ function store(): OpenStore | null {
     ltrim: (key, start, stop) => redis.ltrim(key, start, stop),
     zadd: (key, score, member) => redis.zadd(key, { score, member }),
     hincr: (key, field) => redis.hincrby(key, field, 1),
+    sadd: (key, member) => redis.sadd(key, member),
   };
 }
 

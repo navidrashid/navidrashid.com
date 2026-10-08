@@ -6,6 +6,7 @@ export type OpenStore = {
   ltrim(key: string, start: number, stop: number): Promise<unknown>;
   zadd(key: string, score: number, member: string): Promise<unknown>;
   hincr(key: string, field: string): Promise<unknown>;
+  sadd(key: string, member: string): Promise<unknown>;
 };
 
 const CODE = /^[a-z0-9]{6}$/;
@@ -25,5 +26,8 @@ export async function recordOpen(store: OpenStore, input: { c?: unknown; s?: unk
   await store.ltrim(`open:${code}`, 0, KEEP - 1);
   await store.zadd("opens:last", now, code);
   await store.hincr("opens:count", code);
+  // Running totals for each report, so the dashboard can show them without adding up every owner's opens.
+  await store.hincr("opens:slug:total", slug);
+  await store.sadd(`opens:slug:owners:${slug}`, code);
   return true;
 }
