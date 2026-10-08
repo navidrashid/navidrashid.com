@@ -1,3 +1,4 @@
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { RevampNav } from "./nav";
 
 export default function SiteLayout({
@@ -7,6 +8,7 @@ export default function SiteLayout({
     <>
       <RevampNav />
       {children}
+      <WhatsAppFloat />
     </>
   );
 }
