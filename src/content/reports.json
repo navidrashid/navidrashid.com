@@ -4,13 +4,19 @@
       "slug": "address-opera",
       "name": "Address Opera",
       "month": "October 2026",
-      "updated": "12 Oct 2026"
+      "updated": "19 Oct 2026"
     },
     {
       "slug": "forte",
       "name": "Forte",
       "month": "October 2026",
       "updated": "12 Oct 2026"
+    },
+    {
+      "slug": "opera-grand",
+      "name": "Opera Grand",
+      "month": "October 2026",
+      "updated": "19 Oct 2026"
     }
   ]
 }
