@@ -25,7 +25,7 @@ const channels = [
 ] as const;
 
 export default function RevampPage() {
-  const { about, driven, moving, gallery, vessbook, youtube, close } = revamp;
+  const { about, driven, moving, gallery, keybox, vessbook, youtube, close } = revamp;
   const [lead, ...rest] = about.stats;
 
   return (
@@ -220,8 +220,39 @@ export default function RevampPage() {
       </div>
 
       <section
+        id={keybox.id}
+        className={`${styles.block} ${styles.keyBlock} ${styles.light}`}
+        aria-labelledby="keybox-title"
+      >
+        <div className={`container ${styles.wide}`}>
+          <div className={`${styles.card} ${styles.vess} ${styles.rise}`}>
+            <div className={styles.vessCopy}>
+              <p className={styles.kicker}>{keybox.kicker}</p>
+              <h2 id="keybox-title" className={styles.title}>
+                {keybox.title}
+              </h2>
+              <p className={styles.role}>
+                {keybox.role}
+                <span className={styles.tag}>{keybox.status}</span>
+              </p>
+              <p className={styles.lead}>{keybox.lead}</p>
+            </div>
+            <div className={styles.keyFrame}>
+              <Image
+                src={keybox.logo.src}
+                alt={keybox.logo.alt}
+                width={keybox.logo.width}
+                height={keybox.logo.height}
+                className={styles.keyLogo}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
         id={vessbook.id}
-        className={`${styles.block} ${styles.light}`}
+        className={`${styles.block} ${styles.vessBlock} ${styles.light}`}
         aria-labelledby="vessbook-title"
       >
         <div className={`container ${styles.wide}`}>
