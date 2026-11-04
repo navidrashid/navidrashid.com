@@ -33,7 +33,7 @@ export const revamp = {
         currency: "USD",
         label: "in career deal volume, across Toronto and Dubai.",
       },
-      { value: "Languages", list: ["English", "Kurdish", "Farsi"], label: "spoken." },
+      { value: "Languages", list: ["English", "Kurdish"], label: "spoken." },
       { value: "$25M", currency: "USD", label: "my largest single deal." },
     ],
     image: {
