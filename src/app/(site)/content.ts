@@ -158,8 +158,10 @@ export const revamp = {
     kicker: "Also building",
     title: "Keybox.",
     role: "CEO & Founder",
-    status: "Coming soon",
+    status: "Phase 1 now launched",
     lead: "Currently developing an innovative tech startup platform focused on UAE's off-plan real estate market. Leading product development, market research, and strategic partnerships to create a cutting-edge solution for the industry.",
+    explore: "Explore the Immersive 3D map of Dubai now.",
+    site: { label: "Visit keybox.ae", href: "https://keybox.ae" },
     logo: {
       src: "/images/keybox-logo-3d.png",
       alt: "Keybox logo, a red 3D box with a key",

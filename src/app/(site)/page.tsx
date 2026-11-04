@@ -236,6 +236,16 @@ export default function RevampPage() {
                 <span className={styles.tag}>{keybox.status}</span>
               </p>
               <p className={styles.lead}>{keybox.lead}</p>
+              <p className={styles.keyExplore}>{keybox.explore}</p>
+              <a
+                className={`${styles.pill} ${styles.vessPill}`}
+                href={keybox.site.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {keybox.site.label}
+                <span aria-hidden>↗</span>
+              </a>
             </div>
             <div className={styles.keyFrame}>
               <Image
