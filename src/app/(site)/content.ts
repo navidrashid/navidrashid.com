@@ -155,7 +155,7 @@ export const revamp = {
   },
   keybox: {
     id: "keybox",
-    kicker: "Also building",
+    kicker: "Currently building",
     title: "Keybox.",
     role: "CEO & Founder",
     status: "Phase 2 now launched",
