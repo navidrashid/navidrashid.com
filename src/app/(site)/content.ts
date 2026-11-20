@@ -16,9 +16,9 @@ const photo = (
 
 export const revamp = {
   hero: {
-    subtitle: "Canadian Broker & Entrepreneur",
+    subtitle: "Founder & Real Estate Expert",
     /** More than one line rotates; one stays put. */
-    lines: ["Canadian Broker & Entrepreneur"],
+    lines: ["Founder & Real Estate Expert"],
   },
   about: {
     id: "about",
@@ -158,8 +158,8 @@ export const revamp = {
     kicker: "Also building",
     title: "Keybox.",
     role: "CEO & Founder",
-    status: "Phase 1 now launched",
-    lead: "Currently developing an innovative tech startup platform focused on UAE's off-plan real estate market. Leading product development, market research, and strategic partnerships to create a cutting-edge solution for the industry.",
+    status: "Phase 2 now launched",
+    lead: "Keybox is the UAE's dedicated off-plan portal. Buyers can search new launches by area, developer, budget, handover and payment plan, and explore every project on an immersive 3D map of Dubai.",
     explore: "Explore the Immersive 3D map of Dubai now.",
     site: { label: "Visit keybox.ae", href: "https://keybox.ae" },
     logo: {

@@ -269,6 +269,14 @@
   padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
+.nowCard:first-child {
+  grid-column: 1 / -1;
+}
+
+.nowCard:first-child .nowLine {
+  max-width: 44rem;
+}
+
 .nowRole {
   margin: 0;
   color: var(--soft);

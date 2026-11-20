@@ -25,7 +25,7 @@ const channels = [
 ] as const;
 
 export default function RevampPage() {
-  const { about, driven, moving, gallery, keybox, vessbook, youtube, close } = revamp;
+  const { about, driven, gallery, keybox, vessbook, youtube, close } = revamp;
   const [lead, ...rest] = about.stats;
 
   return (
@@ -38,6 +38,87 @@ export default function RevampPage() {
       <div className={styles.light}>
         <Featured />
       </div>
+
+      <section
+        id={keybox.id}
+        className={`${styles.block} ${styles.keyBlock} ${styles.light}`}
+        aria-labelledby="keybox-title"
+      >
+        <div className={`container ${styles.wide}`}>
+          <div className={`${styles.card} ${styles.vess} ${styles.rise}`}>
+            <div className={styles.vessCopy}>
+              <p className={styles.kicker}>{keybox.kicker}</p>
+              <h2 id="keybox-title" className={styles.title}>
+                {keybox.title}
+              </h2>
+              <p className={styles.role}>
+                {keybox.role}
+                <span className={styles.tag}>{keybox.status}</span>
+              </p>
+              <p className={styles.lead}>{keybox.lead}</p>
+              <p className={styles.keyExplore}>{keybox.explore}</p>
+              <a
+                className={`${styles.pill} ${styles.vessPill}`}
+                href={keybox.site.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {keybox.site.label}
+                <span aria-hidden>↗</span>
+              </a>
+            </div>
+            <div className={styles.keyFrame}>
+              <Image
+                src={keybox.logo.src}
+                alt={keybox.logo.alt}
+                width={keybox.logo.width}
+                height={keybox.logo.height}
+                className={styles.keyLogo}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id={vessbook.id}
+        className={`${styles.block} ${styles.vessBlock} ${styles.light}`}
+        aria-labelledby="vessbook-title"
+      >
+        <div className={`container ${styles.wide}`}>
+          <div className={`${styles.card} ${styles.vess} ${styles.rise}`}>
+            <div className={styles.vessCopy}>
+              <p className={styles.kicker}>{vessbook.kicker}</p>
+              <h2 id="vessbook-title" className={styles.title}>
+                {vessbook.title}
+              </h2>
+              <p className={styles.role}>
+                {vessbook.role}
+                <span className={styles.tag}>{vessbook.status}</span>
+              </p>
+              <p className={styles.lead}>{vessbook.lead}</p>
+              <a
+                className={`${styles.pill} ${styles.vessPill}`}
+                href={vessbook.site.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {vessbook.site.label}
+                <span aria-hidden>↗</span>
+              </a>
+            </div>
+            <div className={styles.vessFrame}>
+              <Image
+                src={vessbook.logo.src}
+                alt={vessbook.logo.alt}
+                width={vessbook.logo.width}
+                height={vessbook.logo.height}
+                className={styles.vessLogo}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section
         id={about.id}
@@ -125,6 +206,15 @@ export default function RevampPage() {
         </div>
       </section>
 
+      <div className={styles.light}>
+        <Gallery
+          id={gallery.id}
+          title={gallery.title}
+          subtitle={gallery.subtitle}
+          photos={gallery.photos}
+        />
+      </div>
+
       <section
         id={driven.id}
         className={`${styles.block} ${styles.ink} ${styles.driven}`}
@@ -177,126 +267,6 @@ export default function RevampPage() {
             {driven.site.label}
             <span aria-hidden> ↗</span>
           </a>
-        </div>
-      </section>
-
-      <section
-        id={moving.id}
-        className={`${styles.block} ${styles.light}`}
-        aria-labelledby="moving-title"
-      >
-        <div className={`container ${styles.wide}`}>
-          <div className={`${styles.card} ${styles.move} ${styles.rise}`}>
-            <div className={styles.moveMedia}>
-              <Image
-                src={moving.image.src}
-                alt={moving.image.alt}
-                fill
-                sizes="(max-width: 800px) 100vw, 50vw"
-                className={styles.moveImage}
-              />
-            </div>
-            <div className={styles.moveCopy}>
-              <h2 id="moving-title" className={`${styles.title} ${styles.moveTitle}`}>
-                {moving.title} <span>{moving.subtitle}</span>
-              </h2>
-              <p className={styles.moveLead}>{moving.lead}</p>
-              <Link className={`${styles.pill} ${styles.pillLight}`} href={moving.cta.href}>
-                {moving.cta.label}
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className={styles.light}>
-        <Gallery
-          id={gallery.id}
-          title={gallery.title}
-          subtitle={gallery.subtitle}
-          photos={gallery.photos}
-        />
-      </div>
-
-      <section
-        id={keybox.id}
-        className={`${styles.block} ${styles.keyBlock} ${styles.light}`}
-        aria-labelledby="keybox-title"
-      >
-        <div className={`container ${styles.wide}`}>
-          <div className={`${styles.card} ${styles.vess} ${styles.rise}`}>
-            <div className={styles.vessCopy}>
-              <p className={styles.kicker}>{keybox.kicker}</p>
-              <h2 id="keybox-title" className={styles.title}>
-                {keybox.title}
-              </h2>
-              <p className={styles.role}>
-                {keybox.role}
-                <span className={styles.tag}>{keybox.status}</span>
-              </p>
-              <p className={styles.lead}>{keybox.lead}</p>
-              <p className={styles.keyExplore}>{keybox.explore}</p>
-              <a
-                className={`${styles.pill} ${styles.vessPill}`}
-                href={keybox.site.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {keybox.site.label}
-                <span aria-hidden>↗</span>
-              </a>
-            </div>
-            <div className={styles.keyFrame}>
-              <Image
-                src={keybox.logo.src}
-                alt={keybox.logo.alt}
-                width={keybox.logo.width}
-                height={keybox.logo.height}
-                className={styles.keyLogo}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id={vessbook.id}
-        className={`${styles.block} ${styles.vessBlock} ${styles.light}`}
-        aria-labelledby="vessbook-title"
-      >
-        <div className={`container ${styles.wide}`}>
-          <div className={`${styles.card} ${styles.vess} ${styles.rise}`}>
-            <div className={styles.vessCopy}>
-              <p className={styles.kicker}>{vessbook.kicker}</p>
-              <h2 id="vessbook-title" className={styles.title}>
-                {vessbook.title}
-              </h2>
-              <p className={styles.role}>
-                {vessbook.role}
-                <span className={styles.tag}>{vessbook.status}</span>
-              </p>
-              <p className={styles.lead}>{vessbook.lead}</p>
-              <a
-                className={`${styles.pill} ${styles.vessPill}`}
-                href={vessbook.site.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {vessbook.site.label}
-                <span aria-hidden>↗</span>
-              </a>
-            </div>
-            <div className={styles.vessFrame}>
-              <Image
-                src={vessbook.logo.src}
-                alt={vessbook.logo.alt}
-                width={vessbook.logo.width}
-                height={vessbook.logo.height}
-                className={styles.vessLogo}
-              />
-            </div>
-          </div>
         </div>
       </section>
 

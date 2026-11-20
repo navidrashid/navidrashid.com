@@ -184,7 +184,7 @@ export const aboutPage = {
       paragraphs: [
         "I landed in 2023 at MG Properties, advising high-net-worth Canadian clients on portfolio allocation and investment, and facilitating over AED 100M in transactions.",
         "Then I was recruited to lead sales on the first JW Marriott-branded private residences on Dubai Islands, a CG Developers project with an AED 400M gross development value. I built the sales team from the ground up and ran luxury pricing, pipeline, broker engagement, ownership meetings, investor presentations and the launch itself.",
-        "Today I'm at Driven Properties, a Forbes Global Properties firm.",
+        "I've since joined Driven Properties, a Forbes Global Properties firm.",
       ],
       facts: [
         { value: "AED 400M", label: "JW Marriott Residences, gross development value" },
@@ -267,8 +267,14 @@ export const aboutPage = {
   ],
   now: {
     title: "Right now.",
-    subtitle: "Two things, both in Dubai.",
+    subtitle: "Three things, all in Dubai.",
     items: [
+      {
+        name: "Keybox",
+        role: "CEO & Founder",
+        line: "The UAE's dedicated off-plan portal. Search new launches by area, developer, budget, handover and payment plan, and explore every project on an immersive 3D map of Dubai. Phase 2 now launched.",
+        cta: { label: "Visit keybox.ae", href: "https://keybox.ae", external: true },
+      },
       {
         name: "Driven Properties",
         role: "Forbes Global Properties",
