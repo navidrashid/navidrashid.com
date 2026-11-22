@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description:
     "Moving to Dubai from Canada or North America? Do it in the right order: where to live, what comes first and who to call.",
   alternates: { canonical: "/moving-to-dubai" },
+  // Hidden for now: reachable by direct link only, kept out of search.
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Moving to Dubai: do it in the right order",
     description:

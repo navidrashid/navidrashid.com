@@ -36,13 +36,13 @@ const whatsapp = (message: string) =>
 
 const roles = [
   {
-    company: "Driven Properties",
-    role: "Broker",
+    company: "Keybox",
+    role: "CEO & Founder",
     location: "Dubai, UAE",
-    period: "Now",
+    period: "2025 — Now",
     summary:
-      "A Forbes Global Properties firm. Buying, investing, selling, renting and managing property in Dubai.",
-    logo: "",
+      "The UAE's dedicated off-plan portal, with every project on an immersive 3D map of Dubai.",
+    logo: "/images/logos/keybox.png",
   },
   {
     company: "Vessbook",
@@ -72,7 +72,7 @@ const channels = [
 ] as const;
 
 export default function RevampAboutPage() {
-  const { intro, chapters, now, record } = aboutPage;
+  const { intro, chapters, developerSide, now, record } = aboutPage;
 
   return (
     <main className={`${styles.page} revamp-about`}>
@@ -168,6 +168,28 @@ export default function RevampAboutPage() {
           </section>
         ))}
 
+        <section id="developer-side" className={styles.work} aria-labelledby="work-title">
+          <div className={`${styles.workCard} ${styles.rise}`}>
+            <p className={styles.workKicker}>{developerSide.kicker}</p>
+            <h2 id="work-title" className={styles.workTitle}>
+              {developerSide.title} <span>{developerSide.subtitle}</span>
+            </h2>
+            <p className={styles.workLead}>{developerSide.lead}</p>
+            <ul className={styles.workStats}>
+              {developerSide.stats.map((stat) => (
+                <li key={stat.value}>
+                  <p className={styles.workValue}>{stat.value}</p>
+                  <p className={styles.workLabel}>{stat.label}</p>
+                </li>
+              ))}
+            </ul>
+            <Link className={styles.workPill} href={developerSide.cta.href}>
+              {developerSide.cta.label}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </section>
+
         <section
           id="now"
           className={styles.chapter}
@@ -184,7 +206,7 @@ export default function RevampAboutPage() {
                   <p className={styles.nowRole}>{item.role}</p>
                   <p className={styles.nowName}>{item.name}</p>
                   <p className={styles.nowLine}>{item.line}</p>
-                  {item.cta.external ? (
+                  {"cta" in item ? (
                     <a
                       className={styles.pill}
                       href={item.cta.href}
@@ -194,12 +216,7 @@ export default function RevampAboutPage() {
                       {item.cta.label}
                       <span aria-hidden>↗</span>
                     </a>
-                  ) : (
-                    <Link className={styles.pill} href={item.cta.href}>
-                      {item.cta.label}
-                      <span aria-hidden>→</span>
-                    </Link>
-                  )}
+                  ) : null}
                 </li>
               ))}
             </ul>

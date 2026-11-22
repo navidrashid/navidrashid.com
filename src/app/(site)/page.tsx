@@ -25,7 +25,7 @@ const channels = [
 ] as const;
 
 export default function RevampPage() {
-  const { about, driven, gallery, keybox, vessbook, youtube, close } = revamp;
+  const { about, gallery, keybox, vessbook, youtube, close } = revamp;
   const [lead, ...rest] = about.stats;
 
   return (
@@ -187,22 +187,6 @@ export default function RevampPage() {
             </span>
           </Link>
 
-          <Link className={`${styles.dev} ${styles.rise}`} href={about.developers.cta.href}>
-            <span className={styles.devCopy}>
-              <span className={styles.devKicker}>{about.developers.kicker}</span>
-              <span className={styles.devTitle}>
-                {about.developers.title} <span>{about.developers.emphasis}</span>
-              </span>
-              <span className={styles.devLead}>{about.developers.lead}</span>
-            </span>
-            <span className={styles.devSide}>
-              <span className={styles.devCta}>
-                {about.developers.cta.label}
-                <span aria-hidden>→</span>
-              </span>
-            </span>
-          </Link>
-
         </div>
       </section>
 
@@ -214,61 +198,6 @@ export default function RevampPage() {
           photos={gallery.photos}
         />
       </div>
-
-      <section
-        id={driven.id}
-        className={`${styles.block} ${styles.ink} ${styles.driven}`}
-        aria-labelledby="driven-title"
-      >
-        <div className={`container ${styles.wide}`}>
-          <Image
-            src={driven.logo.src}
-            alt={driven.logo.alt}
-            width={driven.logo.width}
-            height={driven.logo.height}
-            className={`${styles.drivenLogo} ${styles.rise}`}
-          />
-          <h2 id="driven-title" className={`${styles.title} ${styles.rise}`}>
-            {driven.title} <span>{driven.subtitle}</span>
-          </h2>
-          <p className={`${styles.lead} ${styles.rise}`}>{driven.lead}</p>
-
-          <ul className={styles.paths}>
-            {driven.paths.map((path) => (
-              <li key={path.name} className={styles.rise}>
-                <a href={whatsapp(path.message)} target="_blank" rel="noreferrer" className={styles.path}>
-                  <Image
-                    src={path.image.src}
-                    alt={path.image.alt}
-                    fill
-                    sizes="(max-width: 800px) 100vw, 33vw"
-                    className={styles.pathImage}
-                    style={{ objectPosition: path.image.position }}
-                  />
-                  <span className={styles.pathShade} aria-hidden />
-                  <span className={styles.pathGo} aria-hidden>
-                    +
-                  </span>
-                  <span className={styles.pathText}>
-                    <span className={styles.pathName}>{path.name}</span>
-                    <span className={styles.pathLine}>{path.line}</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            className={styles.outbound}
-            href={driven.site.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {driven.site.label}
-            <span aria-hidden> ↗</span>
-          </a>
-        </div>
-      </section>
 
       <section
         id={youtube.id}

@@ -1,8 +1,8 @@
 export const site = {
   name: "Navid Rashid",
-  title: "Navid Rashid — Real Estate Broker & Entrepreneur",
+  title: "Navid Rashid — Entrepreneur & Real Estate Expert",
   description:
-    "Canadian real estate broker and entrepreneur. $250M+ closed across Toronto and Dubai, specializing in off-plan, secondary market, and luxury property.",
+    "Entrepreneur and real estate expert. $250M+ in career deal volume across Toronto and Dubai, now building Keybox, the UAE's dedicated off-plan portal.",
   url: "https://www.navidrashid.com",
   locale: "en_CA",
   whatsapp: { number: "971585887871" },

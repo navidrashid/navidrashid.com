@@ -9,9 +9,9 @@ export function PersonJsonLd() {
     name: site.name,
     url: site.url,
     image: `${site.url}/images/portraits/portrait-smile.jpg`,
-    jobTitle: "Real Estate Broker",
+    jobTitle: "Entrepreneur & Real Estate Expert",
     description:
-      "Canadian real estate broker and entrepreneur based in Dubai. Off-plan, secondary market and luxury property in Dubai and Toronto.",
+      "Canadian entrepreneur and real estate expert based in Dubai. Founder of Keybox, the UAE's dedicated off-plan portal.",
     nationality: { "@type": "Country", name: "Canada" },
     homeLocation: {
       "@type": "Place",
@@ -23,8 +23,8 @@ export function PersonJsonLd() {
     },
     worksFor: {
       "@type": "Organization",
-      name: "Driven Properties",
-      url: "https://www.drivenproperties.com/",
+      name: "Keybox",
+      url: "https://keybox.ae",
     },
     sameAs: [site.socials.instagram, site.socials.linkedin, site.socials.youtube],
     knowsAbout: [

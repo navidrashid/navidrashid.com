@@ -8,7 +8,6 @@ import styles from "./nav.module.css";
 const pages = [
   { label: "Home", href: "/" },
   { label: "About me", href: "/about" },
-  { label: "Moving to Dubai", href: "/moving-to-dubai" },
 ] as const;
 
 export function RevampNav() {

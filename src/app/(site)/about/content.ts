@@ -184,7 +184,6 @@ export const aboutPage = {
       paragraphs: [
         "I landed in 2023 at MG Properties, advising high-net-worth Canadian clients on portfolio allocation and investment, and facilitating over AED 100M in transactions.",
         "Then I was recruited to lead sales on the first JW Marriott-branded private residences on Dubai Islands, a CG Developers project with an AED 400M gross development value. I built the sales team from the ground up and ran luxury pricing, pipeline, broker engagement, ownership meetings, investor presentations and the launch itself.",
-        "I've since joined Driven Properties, a Forbes Global Properties firm.",
       ],
       facts: [
         { value: "AED 400M", label: "JW Marriott Residences, gross development value" },
@@ -265,6 +264,18 @@ export const aboutPage = {
       row: 2,
     },
   ],
+  developerSide: {
+    kicker: "The developer side",
+    title: "Three major launches.",
+    subtitle: "Run from the inside.",
+    lead: "I've led sales for developers in Toronto and Dubai: building the team, setting the pricing and running the broker network.",
+    stats: [
+      { value: "AED 400M", label: "gross development value, JW Marriott Residences" },
+      { value: "90%", label: "of 8188 Yonge sold in 120 days" },
+      { value: "$125M+", label: "in sales, Hills on Bayview" },
+    ],
+    cta: { label: "See the work", href: "/developers" },
+  },
   now: {
     title: "Right now.",
     subtitle: "Three things, all in Dubai.",
@@ -279,7 +290,6 @@ export const aboutPage = {
         name: "Driven Properties",
         role: "Forbes Global Properties",
         line: "Buying, investing, selling, renting and managing property in Dubai. The person on your deal is me.",
-        cta: { label: "Back to the desk", href: "/#driven", external: false },
       },
       {
         name: "Vessbook",

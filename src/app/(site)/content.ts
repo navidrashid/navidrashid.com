@@ -24,8 +24,8 @@ export const revamp = {
     id: "about",
     kicker: "About",
     statement: [
-      "Trust is the only currency in this business. Nine years in, I've earned it the same way every time: show up prepared, tell the truth, close it clean.",
-      "My focus is luxury and new development, from first investments to landmark residences.",
+      "Nine years in real estate across Toronto and Dubai, selling homes, leading launches and building sales teams. Software, marketing and design are how I scaled it.",
+      "Now I'm using those same skills to change how the UAE buys off-plan.",
     ],
     stats: [
       {

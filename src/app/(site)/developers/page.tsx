@@ -5,12 +5,12 @@ import { developersPage } from "./content";
 import styles from "./developers.module.css";
 
 export const metadata: Metadata = {
-  title: "For developers",
+  title: "Selected work",
   description:
     "Selected work by Navid Rashid: the JW Marriott Residences on Dubai Islands, 8188 Yonge and Hills on Bayview.",
   alternates: { canonical: "/developers" },
   openGraph: {
-    title: "For developers: selected work",
+    title: "Selected work",
     description:
       "Three launches and the numbers behind them: JW Marriott Residences, 8188 Yonge and Hills on Bayview.",
     url: `${site.url}/developers`,
@@ -20,9 +20,6 @@ export const metadata: Metadata = {
 type Photo = { src: string; alt: string; width: number; height: number };
 
 const ratio = (photo: Photo) => Math.min(1.8, Math.max(0.6, photo.width / photo.height));
-
-const whatsapp = (message: string) =>
-  `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(message)}`;
 
 export default function DevelopersPage() {
   const { hero, projects, record, cta } = developersPage;
@@ -130,12 +127,12 @@ export default function DevelopersPage() {
           </ul>
         </section>
 
-        <section className={`${styles.final} ${styles.rise}`} aria-label="Get in touch">
+        <section className={`${styles.final} ${styles.rise}`} aria-label="Keybox">
           <h2 className={styles.finalTitle}>{cta.title}</h2>
           <p className={styles.finalLine}>{cta.line}</p>
           <a
             className={styles.pill}
-            href={whatsapp(cta.message)}
+            href={cta.href}
             target="_blank"
             rel="noreferrer"
           >

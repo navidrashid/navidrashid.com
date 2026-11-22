@@ -124,9 +124,9 @@ export const developersPage = {
     ],
   },
   cta: {
-    title: "Have a launch coming up?",
-    line: "Developers bring me in to build the sales team and run the launch. Tell me about the project.",
-    label: "Message me",
-    message: "Hi Navid, I have a project I'd like to talk to you about.",
+    title: "Now I'm building Keybox.",
+    line: "Everything I learned on these launches now goes into the UAE's dedicated off-plan portal.",
+    label: "Visit keybox.ae",
+    href: "https://keybox.ae",
   },
 } as const;

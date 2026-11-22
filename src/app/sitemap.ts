@@ -14,7 +14,7 @@ const pages = [
   { path: "/links", lastModified: "2026-09-30", priority: 0.7, live: true },
   { path: "/about", lastModified: "2026-09-30", priority: 0.9, live: true },
   { path: "/developers", lastModified: "2026-09-30", priority: 0.8, live: true },
-  { path: "/moving-to-dubai", lastModified: "2026-09-30", priority: 0.8, live: true },
+  { path: "/moving-to-dubai", lastModified: "2026-09-30", priority: 0.8, live: false },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

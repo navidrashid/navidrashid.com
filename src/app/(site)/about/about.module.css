@@ -252,6 +252,100 @@
   object-fit: cover;
 }
 
+/* The developer side: a record of the work, not a pitch. */
+.work {
+  padding-block: clamp(2rem, 5vw, 4rem);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.workCard {
+  padding: clamp(2rem, 6vw, 5rem);
+  border-radius: 2rem;
+  background: #0a0a0a;
+  color: #f5f5f7;
+}
+
+.workKicker {
+  margin: 0 0 1.25rem;
+  color: #a1a1a6;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.workTitle {
+  max-width: 60rem;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.workTitle span {
+  color: #6e6e73;
+}
+
+.workLead {
+  max-width: 42rem;
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  color: #a1a1a6;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.workStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin: clamp(2.5rem, 5vw, 4rem) 0;
+  padding: clamp(1.5rem, 3vw, 2rem) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  list-style: none;
+}
+
+.workStats li {
+  min-width: 0;
+}
+
+.workValue {
+  margin: 0;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.workLabel {
+  margin: 0.6rem 0 0;
+  color: #a1a1a6;
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.workPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: transform 0.3s var(--ease);
+}
+
+.workPill:hover {
+  color: #0a0a0a;
+  transform: scale(1.04);
+}
+
 /* Right now */
 .now {
   display: grid;
@@ -555,6 +649,10 @@
     grid-template-columns: 1fr;
   }
 
+  .workStats {
+    grid-template-columns: 1fr;
+  }
+
   .role {
     grid-template-columns: 3.25rem minmax(0, 1fr);
   }
@@ -575,6 +673,7 @@
   }
 
   .pill,
+  .workPill,
   .recordSummary i::before,
   .recordSummary i::after {
     transition: none;
